@@ -13,11 +13,6 @@ const disciplines = [
     description: 'A arte das oito armas.'
   },
   {
-    name: 'MMA',
-    image: 'https://images.pexels.com/photos/4761658/pexels-photo-4761658.jpeg',
-    description: 'Artes marciais mistas.'
-  },
-  {
     name: 'JIU-JITSU',
     image: 'https://images.pexels.com/photos/4761669/pexels-photo-4761669.jpeg',
     description: 'A arte suave brasileira.'
@@ -27,21 +22,6 @@ const disciplines = [
     image: 'https://images.pexels.com/photos/4761654/pexels-photo-4761654.jpeg',
     description: 'Combinação perfeita de punhos e pernas.'
   },
-  {
-    name: 'WRESTLING',
-    image: 'https://images.pexels.com/photos/4761673/pexels-photo-4761673.jpeg',
-    description: 'Luta corpo a corpo ancestral.'
-  },
-  {
-    name: 'CONDITIONING',
-    image: 'https://images.pexels.com/photos/4761659/pexels-photo-4761659.jpeg',
-    description: 'Preparação física de elite.'
-  },
-  {
-    name: 'SELF DEFENSE',
-    image: 'https://images.pexels.com/photos/4761656/pexels-photo-4761656.jpeg',
-    description: 'Defesa pessoal eficaz.'
-  }
 ];
 
 const Disciplines = () => {

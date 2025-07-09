@@ -1,6 +1,6 @@
 import React from 'react';
 import { Instagram, Facebook, Mail, Phone } from 'lucide-react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const Footer = () => {
   const [footerRef, footerVisible] = useScrollAnimation(0.1);

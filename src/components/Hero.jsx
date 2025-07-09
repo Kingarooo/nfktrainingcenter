@@ -1,6 +1,7 @@
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
 import CallToActionModal from './CallToActionModal';
+import ActionButton from './ActionButton';
 
 const Hero = () => {
   const [modalOpen, setModalOpen] = React.useState(false);
@@ -22,8 +23,17 @@ const Hero = () => {
     setModalOpen(false);
   };
 
+  const playSound = () => {
+    const audio = document.getElementById('bell-audio');
+    if (audio) {
+      audio.currentTime = 0;
+      audio.play();
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <audio id="bell-audio" src="/assets/bell.mp3" preload="auto" />
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -45,9 +55,9 @@ const Hero = () => {
         <p className="font-inter text-xl md:text-2xl font-light mb-8 tracking-wide">
           Combate. Condição. Comunidade.
         </p>
-        <div className="inline-block px-8 py-3 border-2 border-nfk-red bg-transparent hover:bg-nfk-red transition-all duration-300 hover:animate-glow cursor-pointer" onClick={openModal}>
-          <span className="font-bebas text-lg tracking-wider">EXPERIMENTA GRÁTIS</span>
-        </div>
+        <ActionButton onClick={() => { playSound(); openModal(); }}>
+          EXPERIMENTA GRÁTIS
+        </ActionButton>
       </div>
       {/* Modal */}
       <CallToActionModal isOpen={modalOpen} onClose={closeModal} />

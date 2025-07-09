@@ -8,28 +8,27 @@ const Contact = () => {
   const [mapRef, mapVisible] = useScrollAnimation(0.2);
 
   return (
-    <section className="py-20 px-4 bg-nfk-dark">
-      <div className="max-w-7xl mx-auto">
-        <div
-          ref={titleRef}
-          className={`text-center mb-16 transition-all duration-1000 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-        >
-          <h2 className="font-bebas text-5xl md:text-6xl mb-4 text-nfk-red">
-            CONTACTO
-          </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Pronto para começar a sua jornada no mundo do combate?
-            Entre em contacto connosco ou visite-nos pessoalmente.
-          </p>
-        </div>
+    <section id="contactos" className="py-20 px-4 bg-nfk-black">
+      
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div>
+          <div
+            ref={titleRef}
+            className={`text-center mb-16 transition-all duration-1000 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          >
+            <h2 className="font-bebas text-5xl md:text-6xl mb-4 text-nfk-red">
+              CONTACTOS
+            </h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Pronto para começar a sua jornada no mundo do combate?
+              Entre em contacto connosco ou visite-nos pessoalmente.
+            </p>
+          </div>
 
-        <div
-          ref={contentRef}
-          className={`grid md:grid-cols-2 gap-12 transition-all duration-1000 delay-300 ${contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-        >
-          <div className="space-y-8">
+          <div
+            ref={contentRef}
+            className={`space-y-8 transition-all duration-1000 delay-300 ${contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          >
             <h3 className="font-bebas text-3xl mb-6 text-white">
               INFORMAÇÕES DE CONTACTO
             </h3>
@@ -80,17 +79,19 @@ const Contact = () => {
         {/* Map Section */}
         <div
           ref={mapRef}
-          className={`mt-16 transition-all duration-1000 delay-500 ${mapVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
+          className={`transition-all duration-1000 delay-500 bg-nfk-dark h-[60vh] lg:h-[80vh] flex items-stretch ${mapVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
-          <div className="bg-nfk-gray p-4 border border-gray-700">
-            <div className="aspect-video bg-nfk-black flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 text-nfk-red mx-auto mb-4" />
-                <p className="text-gray-400">Mapa integrado aqui</p>
-                <p className="text-sm text-gray-500 mt-2">Lisboa, Rua da Luta, 123</p>
-              </div>
-            </div>
+          <div className="bg-nfk-gray p-0 border border-gray-700 w-full h-full">
+            <iframe
+              title="Localização NFK"
+              src="https://www.google.com/maps?q=41.151324637453136,-8.655065771745997&z=17&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0, minHeight: '400px', height: '100%', width: '100%' }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>

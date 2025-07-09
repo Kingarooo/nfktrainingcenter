@@ -2,48 +2,7 @@ import React from 'react';
 import { Clock } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-const schedule = {
-  'Segunda': [
-    { time: '10:30', class: 'Bag Workout', coach: 'Filipe Albergaria' },
-    { time: '07:00', class: 'Kickboxing', coach: 'Filipe Albergaria' },
-    { time: '18:30', class: 'Kickboxing', coach: 'Filipe Albergaria' }
-  ],
-  'Terça': [
-    { time: '17:00', class: 'Bag Workout', coach: 'Filipe Albergaria' },
-    { time: '18:00', class: 'Boxe', coach: 'Filipe Albergaria' },
-    { time: '13:00', class: 'Kickboxing', coach: 'Filipe Albergaria' },
-    { time: '19:00', class: 'Kickboxing', coach: 'Filipe Albergaria' },
-    { time: '20:00', class: 'Muay Thai', coach: 'Andressa' }
-  ],
-  'Quarta': [
-    { time: '10:30', class: 'Bag Workout', coach: 'Filipe Albergaria' },
-    { time: '18:00', class: 'Boxe', coach: 'Filipe Albergaria' },
-    { time: '07:00', class: 'Kickboxing', coach: 'Filipe Albergaria' },
-    { time: '18:30', class: 'Kickboxing', coach: 'Filipe Albergaria' }
-  ],
-  'Quinta': [
-    { time: '17:00', class: 'Bag Workout', coach: 'Filipe Albergaria' },
-    { time: '18:00', class: 'Boxe', coach: 'Filipe Albergaria' },
-    { time: '13:00', class: 'Kickboxing', coach: 'Filipe Albergaria' },
-    { time: '19:00', class: 'Kickboxing', coach: 'Filipe Albergaria' },
-    { time: '20:00', class: 'Muay Thai', coach: 'Andressa' }
-  ],
-  'Sexta': [
-    { time: '10:30', class: 'Bag Workout', coach: 'Filipe Albergaria' },
-    { time: '18:00', class: 'Boxe', coach: 'Filipe Albergaria' },
-    { time: '07:00', class: 'Kickboxing', coach: 'Filipe Albergaria' },
-    { time: '19:00', class: 'Kickboxing', coach: 'Filipe Albergaria' },
-    { time: '20:00', class: 'Muay Thai', coach: 'Andressa' }
-  ],
-  'Sábado': [
-    { time: '11:00', class: 'Kickboxing', coach: 'Filipe Albergaria' }
-  ],
-  'Domingo': [
-    { time: 'Descanso', class: 'Até os guerreiros merecem descanso', coach: 'Filipe Albergaria' }
-  ]
-};
-
-const Timetable = () => {
+const Timetable = ({ schedule }) => {
   const [titleRef, titleVisible] = useScrollAnimation(0.2);
   const [gridRef, gridVisible] = useScrollAnimation(0.1);
   const [ctaRef, ctaVisible] = useScrollAnimation(0.2);
@@ -70,11 +29,10 @@ const Timetable = () => {
           className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 transition-all duration-1000 delay-300 ${gridVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
         >
-          {Object.entries(schedule).map(([day, classes], index) => (
+          {schedule && Object.entries(schedule).map(([day, classes], index) => (
             <div
               key={day}
-              className={`bg-nfk-gray border border-gray-700 hover:border-nfk-red transition-colors duration-300 ${gridVisible ? 'animate-fade-in-up' : ''
-                }`}
+              className={`bg-nfk-gray border border-gray-700 hover:border-nfk-red transition-colors duration-300 ${gridVisible ? 'animate-fade-in-up' : ''}`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="bg-nfk-red p-4">

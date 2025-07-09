@@ -1,23 +1,21 @@
-import React from 'react';
-import Hero from './components/Hero';
-import About from './components/About';
-import Disciplines from './components/Disciplines';
-import Coaches from './components/Coaches';
-import Timetable from './components/Timetable';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-
+import Landing from './pages/Landing';
+import Footer from './components/shared/Footer';
+import Navbar from './components/shared/Navbar';
+import Schedules from './pages/Schedules';
+import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 function App() {
   return (
-    <div className="bg-nfk-black text-nfk-white font-inter">
-      <Hero />
-      <About />
-      <Disciplines />
-      <Coaches />
-      <Timetable />
-      <Contact />
-      <Footer />
-    </div>
+    <Router>
+      <div className="bg-nfk-black text-nfk-white font-inter">
+        <Navbar />
+         <Routes>
+        <Route path="/schedules" element={<Schedules />} />
+        <Route path="/" element={<Landing />} />
+      </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
