@@ -3,25 +3,53 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const disciplines = [
   {
-    name: 'BOXE',
-    image: 'https://images.pexels.com/photos/4752861/pexels-photo-4752861.jpeg',
-    description: 'A arte nobre da luta com punhos.'
-  },
-  {
-    name: 'MUAY THAI',
-    image: 'https://images.pexels.com/photos/4761668/pexels-photo-4761668.jpeg',
-    description: 'A arte das oito armas.'
-  },
-  {
-    name: 'JIU-JITSU',
-    image: 'https://images.pexels.com/photos/4761669/pexels-photo-4761669.jpeg',
-    description: 'A arte suave brasileira.'
-  },
-  {
     name: 'KICKBOXING',
     image: 'https://images.pexels.com/photos/4761654/pexels-photo-4761654.jpeg',
-    description: 'Combinação perfeita de punhos e pernas.'
+    description: 'Combinação perfeita de punhos e pernas.',
+    submodalities: [
+      'Kickboxing Adultos',
+      'Kickboxing Kids',
+      'Kickboxing/Muaythai Kids',
+      'Bag Workout'
+    ]
   },
+  {
+    name: 'BOXE',
+    image: 'https://images.pexels.com/photos/4752861/pexels-photo-4752861.jpeg',
+    description: 'A arte nobre da luta com punhos.',
+    submodalities: [
+      'Boxe'
+    ]
+  },
+  {
+    name: 'MUAYTHAI',
+    image: 'https://images.pexels.com/photos/4761668/pexels-photo-4761668.jpeg',
+    description: 'A arte das oito armas.',
+    submodalities: [
+      'Muaythai Adultos',
+      'Muaythai Kids'
+    ]
+  },
+  {
+    name: 'JIU JITSU',
+    image: 'https://images.pexels.com/photos/4761669/pexels-photo-4761669.jpeg',
+    description: 'A arte suave brasileira.',
+    submodalities: [
+      'Jiu Jitsu Adultos',
+      'Jiu Jitsu Kids (4 aos 6 anos)',
+      'Jiu Jitsu Kids (7 aos 13 anos)'
+    ]
+  },
+  {
+    name: 'KARATÉ',
+    image: 'https://images.pexels.com/photos/3601095/pexels-photo-3601095.jpeg',
+    description: 'Disciplina, respeito e tradição.',
+    submodalities: [
+      'Karaté Adultos',
+      'Karaté Kids',
+      'Karaté Mini Kids'
+    ]
+  }
 ];
 
 const Disciplines = () => {
@@ -69,13 +97,20 @@ const Disciplines = () => {
                 <div className="absolute inset-0 bg-nfk-black bg-opacity-60 group-hover:bg-opacity-40 transition-all duration-300"></div>
               </div>
               
-              <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <h3 className="font-bebas text-2xl mb-2 text-white group-hover:text-nfk-red transition-colors duration-300">
+              <div className="absolute inset-0 flex flex-col justify-end p-6 pointer-events-none">
+                <h3 className={`font-bebas text-2xl mb-2 text-white transition-all duration-300 group-hover:text-nfk-red group-hover:-translate-y-5`}>
                   {discipline.name}
                 </h3>
-                <p className="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {discipline.description}
-                </p>
+                <div className="transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <p className="text-gray-300 text-sm mb-2">
+                    {discipline.description}
+                  </p>
+                  <ul className="text-gray-200 text-xs space-y-1">
+                    {discipline.submodalities && discipline.submodalities.map((sub, i) => (
+                      <li key={i}>• {sub}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           ))}

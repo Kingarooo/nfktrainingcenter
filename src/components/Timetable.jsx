@@ -53,9 +53,9 @@ const Timetable = ({ schedule }) => {
                     <h4 className="text-white font-semibold mb-1">
                       {classInfo.class}
                     </h4>
-                    <p className="text-gray-400 text-sm">
+                    {/* <p className="text-gray-400 text-sm">
                       Coach: {classInfo.coach}
-                    </p>
+                    </p> */}
                   </div>
                 ))}
               </div>

@@ -25,29 +25,29 @@ export default function App() {
     }
   };
   return (
-    <Navbar shouldHideOnScroll={true} scrollThreshold={32}>
+    <Navbar shouldHideOnScroll scrollThreshold={8} classNames={{ base: 'bg-nfk-black/80 backdrop-blur' }}>
       <NavbarBrand onClick={() => navigate('/')} className="cursor-pointer flex justify-center items-center">
-        <img src={logoNfk} alt="Logo" style={{ height: 80, width: 80, objectFit: 'cover', borderRadius: '50%' }} />
+        <img src={logoNfk} alt="Logo" style={{ height: 100, width: 100, objectFit: 'cover', borderRadius: '50%' }} />
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-20" justify="center">
         <NavbarItem>
-          <Link color="foreground" href="#modalidades" onClick={e => goTo(e, 'modalidades')} className="hover:text-nfk-red transition-colors duration-200 font-bebas text-2xl bg-white/5 hover:bg-white/15 rounded-lg px-6 py-3">
+          <Link color="foreground" href="#modalidades" onClick={e => goTo(e, 'modalidades')} className="hover:text-nfk-red transition-colors duration-200 font-bebas text-2xl bg-white/5 hover:bg-white/15 rounded-lg px-6 py-3 max-w-40">
             Modalidades
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#horarios" onClick={navigateToSchedules} className={`font-bebas text-2xl rounded-lg px-6 py-3 transition-colors duration-200 bg-white/5 hover:bg-white/15 ${location.pathname === '/schedules' ? 'text-nfk-red bg-white/15' : 'hover:text-nfk-red'}` }>
+          <Link color="foreground" href="#horarios" onClick={navigateToSchedules} className={`font-bebas text-2xl rounded-lg px-6 py-3 transition-colors duration-200 bg-white/5 hover:bg-white/15 max-w-40 ${location.pathname === '/schedules' ? 'text-nfk-red bg-white/15' : 'hover:text-nfk-red'}` }>
             Horários
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#contactos" onClick={e => goTo(e, 'contactos')} className="hover:text-nfk-red transition-colors duration-200 font-bebas text-2xl bg-white/5 hover:bg-white/15 rounded-lg px-6 py-3">
+          <Link color="foreground" href="#contactos" onClick={e => goTo(e, 'contactos')} className="hover:text-nfk-red transition-colors duration-200 font-bebas text-2xl bg-white/5 hover:bg-white/15 rounded-lg px-6 py-3 max-w-40">
             Encontra-nos
           </Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarContent onClick={() => navigate('/')} className="cursor-pointer flex justify-center items-center" justify="end">
-        <img src={logoNfk} alt="Logo" style={{ height: 80, width: 80, objectFit: 'cover', borderRadius: '50%' }} />
+        <img src={logoNfk} alt="Logo" style={{ height: 100, width: 100, objectFit: 'cover', borderRadius: '50%' }} />
       </NavbarContent>
     </Navbar>
   );

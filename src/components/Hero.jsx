@@ -67,6 +67,7 @@ const Hero = () => {
           onAnimationEnd={() => setShake(false)}
         >
           <span className="block">NFK</span>
+          <span className="block text-nfk-red text-xs md:text-sm lg:text-base tracking-normal">New Fighting Knowledge</span>
           <span className="block text-nfk-red">TRAINING</span>
           <span className="block">CENTER</span>
         </h1>
