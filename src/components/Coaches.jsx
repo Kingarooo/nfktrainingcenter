@@ -18,11 +18,18 @@ const coaches = [
 		image: 'https://images.pexels.com/photos/4761665/pexels-photo-4761665.jpeg',
 	},
 	{
-		name: 'Rafael',
-		specialty: 'MUAY THAI ASSISTENTE',
-		experience: 'Vários anos',
-		achievements: 'Apoio e acompanhamento dos alunos',
-		image: 'https://images.pexels.com/photos/4761662/pexels-photo-4761662.jpeg',
+		name: 'Pedro Paiva',
+		specialty: 'KARATÉ',
+		experience: 'Mais de 20 anos',
+		achievements: 'Instrutor de Karaté e atleta premiado',
+		image: 'https://images.pexels.com/photos/3601094/pexels-photo-3601094.jpeg',
+	},
+	{
+		name: 'Marco Antonio Carneiro (Marcão)',
+		specialty: 'BJJ',
+		experience: 'Mais de 15 anos',
+		achievements: 'Faixa preta e instrutor de Jiu-Jitsu',
+		image: 'https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg',
 	},
 ];
 
@@ -31,7 +38,7 @@ const Coaches = () => {
 	const [scrollRef, scrollVisible] = useScrollAnimation(0.1);
 
 	return (
-		<section className="py-20 px-4 bg-nfk-dark">
+		<section id="coaches" className="py-20 px-4 bg-nfk-dark">
 			<div className="max-w-7xl mx-auto">
 				<div
 					ref={titleRef}
