@@ -5,6 +5,8 @@ import ActionButton from './ActionButton';
 
 const Hero = () => {
   const [modalOpen, setModalOpen] = React.useState(false);
+  const [shake, setShake] = React.useState(true);
+
   const scrollToModalidades = () => {
     const modalidadesSection = document.getElementById('modalidades');
     if (modalidadesSection) {
@@ -31,8 +33,21 @@ const Hero = () => {
     }
   };
 
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setShake(true);
+    }, 1500);
+    return () => clearInterval(interval);
+  }, []);
+
+  React.useEffect(() => {
+    if (shake) {
+      // Will be reset by onAnimationEnd
+    }
+  }, [shake]);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen pb-10 flex items-center justify-center overflow-hidden">
       <audio id="bell-audio" src="/assets/bell.mp3" preload="auto" />
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
@@ -47,7 +62,10 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 animate-fade-in">
-        <h1 className="font-bebas text-6xl md:text-8xl lg:text-9xl font-bold tracking-wider mb-4">
+        <h1
+          className={`font-bebas text-6xl md:text-8xl lg:text-9xl font-bold tracking-wider mb-4 ${shake ? 'animate-shake' : ''}`}
+          onAnimationEnd={() => setShake(false)}
+        >
           <span className="block">NFK</span>
           <span className="block text-nfk-red">TRAINING</span>
           <span className="block">CENTER</span>
@@ -66,7 +84,7 @@ const Hero = () => {
         className="absolute bottom-8 transform -translate-x-1/2 animate-bounce cursor-pointer group"
         onClick={scrollToModalidades}
       >
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col pb-10 items-center">
           <span className="text-nfk-red font-bebas text-sm mb-2 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
             VER MODALIDADES
           </span>
