@@ -85,10 +85,35 @@ const scheduleOptions = [
 
 const Schedules = () => {
   const [selected, setSelected] = useState("Kickboxing");
+  const [selectedDay, setSelectedDay] = useState("Toda a Semana");
   const selectedSchedule = scheduleOptions.find(opt => opt.key === selected)?.schedule;
+
+  const dayOptions = [
+    "Toda a Semana",
+    "Segunda",
+    "Terça", 
+    "Quarta",
+    "Quinta",
+    "Sexta",
+    "Sábado",
+    "Domingo"
+  ];
+
+  // Filter schedule based on selected day
+  const filteredSchedule = selectedDay === "Toda a Semana" 
+    ? selectedSchedule 
+    : { [selectedDay]: selectedSchedule?.[selectedDay] || [] };
+
+  // Check if it's a single day view
+  const isSingleDay = selectedDay !== "Toda a Semana";
 
   return (
     <div className="py-8">
+      <div className="text-center mb-16">
+          <h2 className="font-bebas text-5xl md:text-6xl mb-4 text-nfk-red">
+            HORÁRIOS
+          </h2>
+        </div>
       <div className="flex gap-4 justify-center mb-8 flex-wrap">
         {scheduleOptions.map((option) => (
           <ActionButton
@@ -102,7 +127,30 @@ const Schedules = () => {
           </ActionButton>
         ))}
       </div>
-      <Timetable schedule={selectedSchedule} />
+
+      {/* Day Selection */}
+      <div className="flex gap-2 justify-center mb-8 flex-wrap max-w-4xl mx-auto">
+        {dayOptions.map((day) => (
+          <button
+            key={day}
+            onClick={() => setSelectedDay(day)}
+            className={`px-4 py-2 rounded-lg font-bebas text-sm transition-all duration-300 border-2 
+              ${selectedDay === day 
+                ? 'bg-nfk-red/20 text-nfk-red border-nfk-red shadow-lg shadow-nfk-red/20' 
+                : 'bg-white/10 text-white border-white/30 hover:bg-white/20 hover:border-white/50'
+              }`}
+          >
+            {day}
+          </button>
+        ))}
+      </div>
+
+      <Timetable 
+        schedule={filteredSchedule} 
+        isSingleDay={isSingleDay}
+        selectedSport={selected}
+        selectedDay={selectedDay}
+      />
     </div>
   );
 };

@@ -12,6 +12,7 @@
   "dependencies": {
     "@heroui/navbar": "^2.2.20",
     "@heroui/react": "^2.7.11",
+    "@nextui-org/react": "^2.6.11",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

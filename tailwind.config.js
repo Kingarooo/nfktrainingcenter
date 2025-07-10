@@ -18,8 +18,8 @@ export default {
         'fade-in': 'fadeIn 0.6s ease-out',
         'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
         'slide-up': 'slideUp 0.8s ease-out',
-        'glow': 'glow 2s ease-in-out infinite alternate',
-        'shake': 'shake 0.6s cubic-bezier(.36,.07,.19,.97) both',
+        'shake': 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
+        'glow': 'glow 1.5s ease-in-out infinite alternate',
       },
       keyframes: {
         fadeIn: {
