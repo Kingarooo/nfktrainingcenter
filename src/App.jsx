@@ -5,7 +5,7 @@ import ScrollToTop from './components/shared/ScrollToTop';
 import Schedules from './pages/Schedules';
 import { Routes, Route } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-
+import CoachProfile from './pages/CoachPage';
 function App() {
   return (
     <Router>
@@ -15,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/schedules" element={<Schedules />} />
           <Route path="/" element={<Landing />} />
+          <Route path="/coach/:id" element={<CoachProfile />} />
         </Routes>
         <Footer />
       </div>

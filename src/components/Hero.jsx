@@ -62,7 +62,7 @@ const Hero = () => {
           <span className="block text-nfk-red">TRAINING</span>
           <span className="block">CENTER</span>
         </h1>
-        <p className="font-inter text-xl md:text-2xl font-light mb-8 tracking-wide">
+        <p className="font-bebas text-xl md:text-2xl font-light mb-8 tracking-wide">
           Combate. Condição. Comunidade.
         </p>
         <ActionButton onClick={() => { playSound(); openModal(); }}>
