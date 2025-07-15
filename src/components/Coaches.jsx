@@ -1,9 +1,11 @@
 import React from 'react';
 import { Award, Star } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const coaches = [
 	{
+		id: 'filipe-albergaria',
 		name: 'Filipe Albergaria',
 		specialty: 'HEAD COACH - KICKBOXING, BOXE, BAG WORKOUT',
 		experience: 'Mais de 15 anos',
@@ -11,6 +13,7 @@ const coaches = [
 		image: 'https://images.pexels.com/photos/4761670/pexels-photo-4761670.jpeg',
 	},
 	{
+		id: 'andressa',
 		name: 'Andressa',
 		specialty: 'MUAY THAI',
 		experience: 'Mais de 10 anos',
@@ -18,6 +21,7 @@ const coaches = [
 		image: 'https://images.pexels.com/photos/4761665/pexels-photo-4761665.jpeg',
 	},
 	{
+		id: 'pedro-paiva',
 		name: 'Pedro Paiva',
 		specialty: 'KARATÉ',
 		experience: 'Mais de 20 anos',
@@ -25,6 +29,7 @@ const coaches = [
 		image: 'https://images.pexels.com/photos/3601094/pexels-photo-3601094.jpeg',
 	},
 	{
+		id: 'marco-antonio',
 		name: 'Marco Antonio Carneiro (Marcão)',
 		specialty: 'BJJ',
 		experience: 'Mais de 15 anos',
@@ -34,9 +39,13 @@ const coaches = [
 ];
 
 const Coaches = () => {
+	const navigate = useNavigate();
 	const [titleRef, titleVisible] = useScrollAnimation(0.2);
 	const [scrollRef, scrollVisible] = useScrollAnimation(0.1);
 
+	const handleCoachClick = (coachId) => {
+		navigate(`/coach/${coachId}`);
+	};
 	return (
 		<section id="coaches" className="py-20 px-4 bg-nfk-dark">
 			<div className="max-w-7xl mx-auto">
@@ -64,10 +73,11 @@ const Coaches = () => {
 					{coaches.map((coach, index) => (
 						<div
 							key={index}
-							className={`flex-shrink-0 w-80 bg-nfk-gray border border-gray-700 hover:border-nfk-red transition-all duration-300 group ${
+							className={`flex-shrink-0 w-80 bg-nfk-gray border border-gray-700 hover:border-nfk-red transition-all duration-300 group cursor-pointer ${
 								scrollVisible ? 'animate-fade-in-up' : ''
 							}`}
 							style={{ animationDelay: `${index * 150}ms` }}
+							onClick={() => handleCoachClick(coach.id)}
 						>
 							<div className="relative overflow-hidden">
 								<img
@@ -76,6 +86,12 @@ const Coaches = () => {
 									className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
 								/>
 								<div className="absolute inset-0 bg-gradient-to-t from-nfk-black via-transparent to-transparent"></div>
+								<div className="absolute inset-0 bg-nfk-red bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+								<div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+									<span className="text-white font-bebas text-sm bg-nfk-red px-3 py-1">
+										VER PERFIL
+									</span>
+								</div>
 							</div>
 
 							<div className="p-6">
