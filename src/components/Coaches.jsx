@@ -1,6 +1,5 @@
 import { Award, Star } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 // Import coach images
