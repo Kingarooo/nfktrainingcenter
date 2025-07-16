@@ -194,26 +194,27 @@ const CoachDetail = ({ coach }) => {
             </div>
 
             {/* Instagram Button */}
-            {coachData.instagram && (
-              <div className="flex justify-center">
+            
+
+            {/* Contact CTA */}
+            <div className="flex flex-col bg-nfk-dark gap-4 p-6 border border-gray-700 hover:border-nfk-red transition-colors duration-300">
+              <h3 className="font-bebas text-xl mb-3 text-white">
+                TREINAR COM {coachData.name.split(' ')[0].toUpperCase()}
+              </h3>
+              {coachData.instagram && (
+              <div className="flex justify-start">
                 <a
                   href={`https://instagram.com/${coachData.instagram.replace('@', '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 bg-gradient-to-r from-nfk-red to-red-600 hover:from-red-600 hover:to-nfk-red text-white px-6 py-3 rounded-lg font-bebas text-lg tracking-wider transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-nfk-red/50"
+                  className="flex items-start gap-3 bg-gradient-to-r from-nfk-red to-red-600 hover:from-red-600 hover:to-nfk-red text-white px-6 py-3 rounded-lg font-bebas text-lg tracking-wider transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-nfk-red/50"
                 >
                   <Instagram className="w-6 h-6" />
                   <span>SEGUIR NO INSTAGRAM</span>
                 </a>
               </div>
             )}
-
-            {/* Contact CTA */}
-            <div className="bg-nfk-dark p-6 border border-gray-700 hover:border-nfk-red transition-colors duration-300">
-              <h3 className="font-bebas text-xl mb-3 text-white">
-                TREINAR COM {coachData.name.split(' ')[0].toUpperCase()}
-              </h3>
-              <p className="text-gray-400 mb-4 text-sm">
+              <p className="text-gray-400 font-bold text-sm">
                 Interessado em treinar com este coach? Entre em contacto connosco para agendar a sua aula experimental gratuita.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
