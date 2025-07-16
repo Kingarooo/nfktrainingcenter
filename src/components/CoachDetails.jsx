@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Award, Star, Target } from 'lucide-react';
+import { ArrowLeft, Award, Star, Target, Instagram } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 // Modal icon components based on modality
@@ -192,6 +192,21 @@ const CoachDetail = ({ coach }) => {
                 ))}
               </ul>
             </div>
+
+            {/* Instagram Button */}
+            {coachData.instagram && (
+              <div className="flex justify-center">
+                <a
+                  href={`https://instagram.com/${coachData.instagram.replace('@', '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 bg-gradient-to-r from-nfk-red to-red-600 hover:from-red-600 hover:to-nfk-red text-white px-6 py-3 rounded-lg font-bebas text-lg tracking-wider transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-nfk-red/50"
+                >
+                  <Instagram className="w-6 h-6" />
+                  <span>SEGUIR NO INSTAGRAM</span>
+                </a>
+              </div>
+            )}
 
             {/* Contact CTA */}
             <div className="bg-nfk-dark p-6 border border-gray-700 hover:border-nfk-red transition-colors duration-300">

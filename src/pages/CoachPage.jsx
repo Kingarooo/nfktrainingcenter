@@ -35,9 +35,9 @@ import PlaceholderImage from '../assets/coaches/placeholder.jpg';
 const coachesData = {
   'filipe-albergaria': {
     id: 'filipe-albergaria',
-    name: 'Filipe Albergaria',
+    name: 'Filipe Miguel de Albergaria Pereira',
     modality: 'kickboxing',
-    bio: 'Head Coach do NFK Training Center com mais de 15 anos de experiência em desportos de combate. Especialista em kickboxing, boxe e preparação física, Filipe tem dedicado a sua carreira a formar campeões e a inspirar atletas de todos os níveis.',
+    bio: '"Pratico ativamente Kickboxing há 15 anos, na qual me tornei profissional na categoria de K1. Sou treinador ativo do Kickboxing há 5 anos onde o foco passa por transmitir os valores da modalidade e ajudar na formação de futuros lutadores." Filipe traz uma abordagem única ao treino, combinando técnica refinada com paixão pelo ensino.',
     images: [
       FilipePfp,
       FilipeThumbnail01,
@@ -47,14 +47,14 @@ const coachesData = {
       FilipeThumbnail05
     ],
     accomplishments: [
-      'Head Coach certificado em Kickboxing e Boxe',
-      'Mais de 15 anos de experiência em treino de combate',
-      'Formou múltiplos campeões nacionais e internacionais',
-      'Especialista em preparação física para atletas de combate',
-      'Instrutor certificado em Bag Workout e condicionamento',
-      'Mentor de mais de 500 atletas ao longo da carreira',
-      'Desenvolveu programas de treino inovadores para todos os níveis'
-    ]
+      '1° Dan de Kickboxing/Muaythai',
+      'Curso de Nível 1 treinador de Kickboxing/Muaythai',
+      'Curso Nível 1 de Boxe',
+      '15 anos de prática ativa em Kickboxing',
+      '5 anos como treinador ativo de Kickboxing'
+    ],
+    email: 'nfktrainingcenter@gmail.com',
+    instagram: '@albergariamethod'
   },
   'andressa-baptista': {
     id: 'andressa-baptista',
