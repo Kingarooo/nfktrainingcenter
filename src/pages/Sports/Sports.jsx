@@ -154,10 +154,11 @@ const Sports = () => {
                 
                 {/* Mobile button for levels */}
                 <button 
-                  className="sm:hidden absolute bottom-4 right-4 px-3 py-1 bg-nfk-red bg-opacity-80 hover:bg-opacity-100 text-white text-xs font-bebas rounded transition-all duration-200 pointer-events-auto z-10"
+                  className="sm:hidden absolute bottom-4 right-4 px-2 py-1 bg-nfk-dark-red bg-opacity-80 hover:bg-opacity-100 text-white text-xs font-bebas rounded transition-all duration-200 pointer-events-auto z-10"
                   onClick={(e) => toggleMobileInfo(sport.name, e)}
                 >
                   NÍVEIS
+                  <InfoIcon className="inline-block ml-2 opacity-70 group-hover:opacity-100" />
                 </button>
               </div>
             </div>
