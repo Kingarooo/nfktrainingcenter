@@ -85,7 +85,7 @@ const CoachDetail = ({ coach }) => {
   };
 
   const handleBackClick = () => {
-    navigate('/#coaches');
+    navigate(-1);
   };
 
   return (

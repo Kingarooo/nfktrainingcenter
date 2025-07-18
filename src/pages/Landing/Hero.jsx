@@ -33,7 +33,10 @@ const Hero = () => {
     const audio = document.getElementById('bell-audio');
     if (audio) {
       audio.currentTime = 0;
-      audio.play();
+      audio.play().catch(error => {
+        console.log('Audio play failed:', error);
+        // Audio play failed, but continue without sound
+      });
     }
   };
 
@@ -73,11 +76,11 @@ const Hero = () => {
       <CallToActionModal isOpen={modalOpen} onClose={closeModal} />
 
       <div 
-        className="absolute bottom-10 transform -translate-x-1/2 animate-bounce cursor-pointer group"
+        className="absolute bottom-8 transform -translate-x-1/2 animate-bounce cursor-pointer group"
         onClick={scrollToModalidades}
       >
-        <div className="flex flex-col pb-12 items-center">
-          <span className="text-nfk-red font-bebas text-sm  opacity-70 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="flex flex-col items-center">
+          <span className="text-nfk-red font-bebas text-sm opacity-70 group-hover:opacity-100 transition-opacity duration-300">
             MODALIDADES
           </span>
           <ChevronDown className="w-8 h-8 text-nfk-red opacity-70 group-hover:text-white transition-colors duration-300" />

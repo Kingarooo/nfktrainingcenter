@@ -1,13 +1,13 @@
 import React from 'react';
-import { useScrollAnimation } from '../../hooks/useScrollAnimation';
-import InfoIcon from '../../components/shared/InfoIcon';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import InfoIcon from './shared/InfoIcon';
 import {
   KickboxingThumbnail,
   BoxeThumbnail,
   MuaythaiThumbnail,
   BjjThumbnail,
   KarateThumbnail
-} from '../../constants/sportImages';
+} from '../constants/sportImages';
 import { useNavigate } from 'react-router-dom';
 
 const sports = [
@@ -126,7 +126,7 @@ const Sports = () => {
                   </h3>
                 </div>
                 
-                {/* Content that appears on hover (desktop) or toggle (mobile) */}
+                {/* Content that appears on hover or mobile toggle */}
                 <div className="flex-1 flex flex-col justify-end p-6 pt-0">
                   <div className={`transform transition-transform duration-300 ${
                     mobileToggles[sport.name] ? 'translate-y-0' : 'translate-y-full group-hover:translate-y-0'
@@ -142,23 +142,28 @@ const Sports = () => {
                   </div>
                 </div>
                 
-                {/* Hover indicator icon - Hidden on mobile */}
+                {/* Mobile toggle button (visible only on mobile) */}
+                <button
+                  onClick={(e) => toggleMobileInfo(sport.name, e)}
+                  className="absolute bottom-4 right-4 text-gray-100 group-hover:text-nfk-red transition-colors duration-300 pointer-events-auto z-10 sm:hidden"
+                >
+                  <div className="flex items-center space-x-1">
+                    <span className="text-s font-bebas opacity-60 group-hover:opacity-100">
+                      NÍVEIS
+                    </span>
+                    <InfoIcon className="opacity-70 group-hover:opacity-100" />
+                  </div>
+                </button>
+
+                {/* Desktop hover indicator icon */}
                 <div className="absolute bottom-4 right-4 text-gray-100 group-hover:text-nfk-red transition-colors duration-300 hidden sm:block">
                   <div className="flex items-center space-x-1">
-                    <span className="text-s font-bebas pt-1 opacity-60 group-hover:opacity-100 animate-pulse group-hover:animate-none">
-                      NÍVEIS
+                    <span className="text-s font-bebas opacity-60 group-hover:opacity-100 animate-pulse group-hover:animate-none">
+                      IDADES
                     </span>
                     <InfoIcon className="opacity-70 group-hover:opacity-100 animate-pulse group-hover:animate-none" />
                   </div>
                 </div>
-                
-                {/* Mobile button for levels */}
-                <button 
-                  className="sm:hidden absolute bottom-4 right-4 px-3 py-1 bg-nfk-red bg-opacity-80 hover:bg-opacity-100 text-white text-xs font-bebas rounded transition-all duration-200 pointer-events-auto z-10"
-                  onClick={(e) => toggleMobileInfo(sport.name, e)}
-                >
-                  NÍVEIS
-                </button>
               </div>
             </div>
           ))}

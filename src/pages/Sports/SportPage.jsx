@@ -68,7 +68,7 @@ const SportPage = () => {
       <div className="sticky top-0 z-40 bg-nfk-black/95 backdrop-blur-sm border-b border-nfk-gray">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <button
-            onClick={() => navigate('/')}
+            onClick={() => navigate(-1)}
             className="flex items-center space-x-2 text-gray-400 hover:text-nfk-red transition-colors duration-300 mb-4 group"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300" />

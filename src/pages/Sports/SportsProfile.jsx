@@ -6,7 +6,7 @@ const SportsProfile = ({ sport }) => {
   const navigate = useNavigate();
 
   const handleBackClick = () => {
-    navigate('/#modalidades');
+    navigate(-1);
   };
 
   return (
