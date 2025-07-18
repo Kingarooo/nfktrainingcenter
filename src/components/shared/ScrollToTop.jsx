@@ -1,8 +1,15 @@
 import React from 'react';
 import { ChevronUp } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = React.useState(false);
+  const location = useLocation();
+
+  // Scroll to top when route changes
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   // Show button when page is scrolled up to given distance
   const toggleVisibility = () => {

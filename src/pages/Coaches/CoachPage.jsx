@@ -1,35 +1,29 @@
 import { useParams } from 'react-router-dom';
-import CoachDetails from '../components/CoachDetails';
-
-// Import coach images
-import FilipePfp from '../assets/coaches/Filipe/Filipe_pfp.jpg';
-import FilipeThumbnail01 from '../assets/coaches/Filipe/Filipe_thumbnail_01.jpg';
-import FilipeThumbnail02 from '../assets/coaches/Filipe/Filipe_thumbnail_02.jpg';
-import FilipeThumbnail03 from '../assets/coaches/Filipe/Filipe_thumbnail_03.jpg';
-import FilipeThumbnail04 from '../assets/coaches/Filipe/Filipe_thumbnail_04.jpg';
-import FilipeThumbnail05 from '../assets/coaches/Filipe/Filipe_thumbnail_05.jpg';
-
-import AndressaPfp from '../assets/coaches/Andressa/Andressa_pfp.jpg';
-import AndressaThumbnail01 from '../assets/coaches/Andressa/Andressa_thumbnail_01.jpg';
-import AndressaThumbnail02 from '../assets/coaches/Andressa/Andressa_thumbnail_02.jpg';
-import AndressaThumbnail03 from '../assets/coaches/Andressa/Andressa_thumbnail_03.jpg';
-
-import PedroPfp from '../assets/coaches/Pedro/Pedro_pfp.jpg';
-import PedroThumbnail01 from '../assets/coaches/Pedro/Pedro_thumbnail_01.jpg';
-import PedroThumbnail02 from '../assets/coaches/Pedro/Pedro_thumbnail_02.jpg';
-import PedroThumbnail03 from '../assets/coaches/Pedro/Pedro_thumbnail_03.jpg';
-
-import MarcaoPfp from '../assets/coaches/Marcao/Marcao_pfp.jpg';
-import MarcaoThumbnail01 from '../assets/coaches/Marcao/Marcao_thumbnail_01.jpg';
-import MarcaoThumbnail02 from '../assets/coaches/Marcao/Marcao_thumbnail_02.jpg';
-import MarcaoThumbnail03 from '../assets/coaches/Marcao/Marcao_thumbnail_03.jpg';
-
-import RafaelPfp from '../assets/coaches/Rafael/Rafael_pfp.jpg';
-import RafaelThumbnail01 from '../assets/coaches/Rafael/Rafael_thumbnail_01.jpg';
-import RafaelThumbnail02 from '../assets/coaches/Rafael/Rafael_thumbnail_02.jpg';
-import RafaelThumbnail03 from '../assets/coaches/Rafael/Rafael_thumbnail_03.jpg';
-
-import PlaceholderImage from '../assets/coaches/placeholder.jpg';
+import CoachDetails from './CoachDetails';
+import {
+  FilipePfp,
+  FilipeThumbnail01,
+  FilipeThumbnail02,
+  FilipeThumbnail03,
+  FilipeThumbnail04,
+  AndressaPfp,
+  AndressaThumbnail01,
+  AndressaThumbnail02,
+  AndressaThumbnail03,
+  PedroPfp,
+  PedroThumbnail01,
+  PedroThumbnail02,
+  PedroThumbnail03,
+  MarcaoPfp,
+  MarcaoThumbnail01,
+  MarcaoThumbnail02,
+  MarcaoThumbnail03,
+  RafaelPfp,
+  RafaelThumbnail01,
+  RafaelThumbnail02,
+  RafaelThumbnail03,
+  PlaceholderImage
+} from '../../constants/coachImages';
 
 // Sample coach data - replace with your actual data source
 const coachesData = {
@@ -44,7 +38,6 @@ const coachesData = {
       FilipeThumbnail02,
       FilipeThumbnail03,
       FilipeThumbnail04,
-      FilipeThumbnail05
     ],
     accomplishments: [
       '1° Dan de Kickboxing/Muaythai',
@@ -81,7 +74,7 @@ const coachesData = {
     id: 'pedro-paiva',
     name: 'Pedro Paiva',
     modality: 'karate',
-    bio: 'Mestre de Karaté com mais de 20 anos de experiência na arte marcial tradicional. Pedro combina disciplina, técnica e filosofia oriental no ensino, formando não apenas lutadores, mas também pessoas de carácter.',
+    bio: '"Mestre de Karaté com mais de 25 anos de prática, sendo 10 deles como Professor. Os treinos combinam técnicas de Defesa Pessoal, competição e formato tradicional da arte. Sempre baseado nos princípios do Bushido como a justiça, coragem e benevolência." Pedro é um formador de campeões nacionais e especialista em ensino desde crianças até adultos.',
     images: [
       PedroPfp,
       PedroThumbnail01,
@@ -89,20 +82,21 @@ const coachesData = {
       PedroThumbnail03
     ],
     accomplishments: [
-      'Faixa preta 5º Dan em Karaté Shotokan',
-      'Mais de 20 anos de prática e ensino',
-      'Campeão nacional em múltiplas categorias',
-      'Instrutor certificado pela Federação Nacional',
-      'Especialista em Karaté tradicional e desportivo',
-      'Formou campeões nacionais e internacionais',
-      'Desenvolve programas para crianças e adultos'
+      'Cinto preto 4° Dan em Karaté Shukokai',
+      'Mais de 15 anos como Cinto Negro',
+      'Instrutor certificado pelo IPDJ e FNKP (carteira renovada até Maio 2027, n° 88945)',
+      'Treinador de Defesa Pessoal nível 1 certificado pela IPDJ e DGERT',
+      'Formado em seminários pelo renomeado Mestre Vinicio Antony (Ex Head Coach de Lyoto Machida e Victor Belfort)',
+      'Formador de campeões Nacionais de Shukokai',
+      'Desenvolve programas para crianças a partir dos 3 anos até adultos',
+      'Especialista em técnicas de Defesa Pessoal, competição e formato tradicional'
     ]
   },
   'marco-antonio': {
     id: 'marco-antonio',
-    name: 'Marco Antonio Carneiro (Marcão)',
+    name: 'Marco Aurélio (Marcão)',
     modality: 'bjj',
-    bio: 'Faixa preta de Jiu-Jitsu Brasileiro com mais de 15 anos de experiência. Marcão é conhecido pela sua técnica refinada e capacidade de ensino, tendo formado inúmeros atletas de sucesso na arte suave.',
+    bio: '"Com 25 anos como professor e faixa preta há 17 anos, sou parte da equipa percursora de BJJ no Norte de Portugal. O meu estilo de ensino é dinâmico e versátil, adaptando-me às necessidades de cada aluno." Marcão é uma referência no Jiu-Jitsu português, combinando vasta experiência com inovação no ensino.',
     images: [
       MarcaoPfp,
       MarcaoThumbnail01,
@@ -110,13 +104,13 @@ const coachesData = {
       MarcaoThumbnail03
     ],
     accomplishments: [
-      'Faixa preta de Jiu-Jitsu Brasileiro',
-      'Mais de 15 anos de experiência em BJJ',
-      'Competidor ativo em torneios nacionais',
-      'Especialista em técnicas de finalização',
-      'Instrutor certificado pela IBJJF',
-      'Formou múltiplos faixas coloridas e pretas',
-      'Desenvolve programas para iniciantes e avançados'
+      'Faixa preta 4º grau (17 anos como faixa preta)',
+      '25 anos como professor de Jiu-Jitsu',
+      'Árbitro Internacional',
+      '5 vezes campeão como faixa preta',
+      '5 vezes vice-campeão como faixa preta',
+      'Parte da equipa percursora de BJJ no Norte de Portugal',
+      'Estilo de ensino dinâmico e versátil'
     ]
   },
   'rafael': {
@@ -139,10 +133,34 @@ const coachesData = {
       'Instrutor de técnicas de combate avançadas',
       'Mentor de novos talentos do MMA'
     ]
+  },
+  'fernando-teixeira': {
+    id: 'fernando-teixeira',
+    name: 'Fernando Teixeira (Nando/Nandinho)',
+    modality: 'bjj',
+    bio: '"Com 7 anos como professor e faixa preta há 3 anos, o meu estilo de ensino é estratégico, focando na técnica e na mentalidade do Jiu-Jitsu. Sou também professor de boxe e fundador da equipa Art Suave Lapelas." Fernando é um competidor ativo com múltiplas conquistas nacionais e internacionais.',
+    images: [
+      PlaceholderImage,
+      PlaceholderImage,
+      PlaceholderImage,
+      PlaceholderImage
+    ],
+    accomplishments: [
+      'Faixa preta 1º grau (3 anos como faixa preta)',
+      '7 anos como professor de Jiu-Jitsu',
+      'Professor de boxe certificado',
+      'Fundador da equipa Art Suave Lapelas',
+      'Campeão português como faixa preta',
+      'Campeão open nacional',
+      'Tetra campeão Grand Slam Portugal',
+      'Campeão Absoluto no Grand Slam Portugal',
+      'Campeão AGP no-gi',
+      'Pai de campeã nacional juvenil'
+    ]
   }
 };
 
-const CoachProfile = () => {
+const CoachPage = () => {
   const { id } = useParams();
   const coach = coachesData[id];
 
@@ -166,4 +184,4 @@ const CoachProfile = () => {
   return <CoachDetails coach={coach} />;
 };
 
-export default CoachProfile;
+export default CoachPage;

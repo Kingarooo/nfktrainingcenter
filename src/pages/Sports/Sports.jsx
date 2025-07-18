@@ -1,15 +1,16 @@
 import React from 'react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import InfoIcon from './shared/InfoIcon';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+import InfoIcon from '../../components/shared/InfoIcon';
+import {
+  KickboxingThumbnail,
+  BoxeThumbnail,
+  MuaythaiThumbnail,
+  BjjThumbnail,
+  KarateThumbnail
+} from '../../constants/sportImages';
+import { useNavigate } from 'react-router-dom';
 
-// Import sport thumbnail images
-import KickboxingThumbnail from '../assets/sport/kickboxing/kickboxing_thumbnail_01.jpg';
-import BoxeThumbnail from '../assets/sport/boxe/boxe_thumbnail_01.jpg';
-import MuaythaiThumbnail from '../assets/sport/muaythai/muaythai_thumbnail_01.jpg';
-import JiujitsuThumbnail from '../assets/sport/jiujitsu/jiujitsu_thumbnail_01.jpg';
-import KarateThumbnail from '../assets/sport/karate/karate_thumbnail_01.jpg';
-
-const disciplines = [
+const sports = [
   {
     name: 'KICKBOXING',
     image: KickboxingThumbnail,
@@ -40,7 +41,7 @@ const disciplines = [
   },
   {
     name: 'JIU JITSU',
-    image: JiujitsuThumbnail,
+    image: BjjThumbnail,
     description: 'A arte suave brasileira.',
     submodalities: [
       'Jiu Jitsu Adultos',
@@ -60,9 +61,10 @@ const disciplines = [
   }
 ];
 
-const Disciplines = () => {
+const Sports = () => {
   const [titleRef, titleVisible] = useScrollAnimation(0.2);
   const [gridRef, gridVisible] = useScrollAnimation(0.1);
+  const navigate = useNavigate();
 
   return (
     <section id="modalidades" className="py-20 px-4 bg-nfk-black">
@@ -88,9 +90,10 @@ const Disciplines = () => {
             gridVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          {disciplines.map((discipline, index) => (
+          {sports.map((sport, index) => (
             <div 
               key={index}
+              onClick={() => navigate(`/sport/${sport.name.toLowerCase()}`)}
               className={`group relative overflow-hidden bg-nfk-gray border border-nfk-gray hover:border-nfk-red transition-all duration-300 transform hover:scale-105 ${
                 gridVisible ? 'animate-fade-in-up' : ''
               }`}
@@ -98,8 +101,8 @@ const Disciplines = () => {
             >
               <div className="aspect-square relative">
                 <img 
-                  src={discipline.image}
-                  alt={discipline.name}
+                  src={sport.image}
+                  alt={sport.name}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-nfk-black bg-opacity-60 group-hover:bg-opacity-40 transition-all duration-300"></div>
@@ -109,7 +112,7 @@ const Disciplines = () => {
                 {/* Title fixed at top */}
                 <div className="p-6 pb-0">
                   <h3 className="font-bebas text-2xl text-white group-hover:text-nfk-red transition-colors duration-300">
-                    {discipline.name}
+                    {sport.name}
                   </h3>
                 </div>
                 
@@ -117,10 +120,10 @@ const Disciplines = () => {
                 <div className="flex-1 flex flex-col justify-end p-6 pt-0">
                   <div className="transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                     <p className="text-gray-300 text-sm mb-2 pl-0">
-                      {discipline.description}
+                      {sport.description}
                     </p>
                     <ul className="text-gray-300 text-xs space-y-1">
-                      {discipline.submodalities && discipline.submodalities.map((sub, i) => (
+                      {sport.submodalities && sport.submodalities.map((sub, i) => (
                         <li key={i}>• {sub}</li>
                       ))}
                     </ul>
@@ -145,4 +148,4 @@ const Disciplines = () => {
   );
 };
 
-export default Disciplines;
+export default Sports;

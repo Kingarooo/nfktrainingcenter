@@ -8,6 +8,7 @@ export default {
         'nfk-dark': '#111111',
         'nfk-gray': '#1a1a1a',
         'nfk-red': '#e10600',
+        'nfk-dark-red': '#b00000',
         'nfk-white': '#ffffff',
       },
       fontFamily: {

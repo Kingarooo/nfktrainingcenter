@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
 import CallToActionModal from './CallToActionModal';
-import ActionButton from './ActionButton';
+import ActionButton from '../../components/shared/ActionButton';
 
 const Hero = () => {
   const [modalOpen, setModalOpen] = React.useState(false);

@@ -15,7 +15,7 @@ const ModalityIcon = ({ modality, className }) => {
   };
   
   return (
-    <span className={`text-6xl opacity-10 ${className}`}>
+    <span className={`text-6xl opacity-20 ${className}`}>
       {iconMap[modality] || '🥊'}
     </span>
   );
@@ -43,7 +43,6 @@ const CoachDetail = ({ coach }) => {
     const needsOpositePositioning = [
       'Filipe_thumbnail_01.jpg',
       'Filipe_thumbnail_02.jpg',
-      'Filipe_thumbnail_05.jpg',
     ];
     if (needsExtraPositioning.includes(imageName)) {
       return isMainImage ? 'center -100px' : 'center -30px';

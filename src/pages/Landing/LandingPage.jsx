@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import Hero from '../components/Hero';
-import About from '../components/About';
-import Disciplines from '../components/Disciplines';
-import Coaches from '../components/Coaches';
-import Timetable from '../components/Timetable';
-import Contact from '../components/Contact';
+import Hero from './Hero';
+import About from './About';
+import Sports from '../Sports/Sports';
+import Coaches from '../Coaches/Coaches';
+import Timetable from '../Schedules/Timetable';
+import Contact from './Contact';
 
 const Landing = () => {
   const location = useLocation();
@@ -27,7 +27,7 @@ const Landing = () => {
     <>
       <Hero />
       <About />
-      <Disciplines />
+      <Sports />
       <Coaches />
       <Contact />
     </>

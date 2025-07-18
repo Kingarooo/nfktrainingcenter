@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Timetable from "../components/Timetable";
-import ActionButton from "../components/ActionButton";
-import { kickboxingSchedule, karateSchedule, bjjSchedule } from "../constants/schedules";
+import Timetable from "./Timetable";
+import ActionButton from "../../components/shared/ActionButton";
+import { kickboxingSchedule, karateSchedule, bjjSchedule } from "../../constants/schedules";
 
 // Create a separate schedule for Boxing and Bag Workout
 const boxingSchedule = {
