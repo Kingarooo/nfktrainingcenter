@@ -55,13 +55,13 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 animate-fade-in">
+      <div className="relative z-10 text-center px-4 pb-5 animate-fade-in">
         <h1
           className={`font-bebas text-6xl md:text-8xl lg:text-9xl font-bold tracking-wider mb-4 ${shake ? 'animate-shake' : ''}`}
           onAnimationEnd={() => setShake(false)}
         >
           <span className="block">NFK</span>
-          <span className="block text-xs md:text-sm lg:text-base tracking-normal">New Fighting Knowledge</span>
+          <span className="block text-xs md:text-sm lg:text-base tracking-widest">New Fighting Knowledge</span>
           <span className="block text-nfk-red">TRAINING</span>
           <span className="block">CENTER</span>
         </h1>
@@ -76,7 +76,7 @@ const Hero = () => {
       <CallToActionModal isOpen={modalOpen} onClose={closeModal} />
 
       <div 
-        className="absolute bottom-8 transform -translate-x-1/2 animate-bounce cursor-pointer group"
+        className="absolute bottom-[12vh] transform -translate-x-1/2 animate-bounce cursor-pointer group"
         onClick={scrollToModalidades}
       >
         <div className="flex flex-col items-center">
