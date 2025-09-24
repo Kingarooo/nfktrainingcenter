@@ -7,7 +7,7 @@ import {
   PedroPfp,
   MarcaoPfp,
   RafaelPfp,
-  PlaceholderImage
+  NoImage
 } from '../../constants/coachImages';
 
 const coaches = [
@@ -57,7 +57,7 @@ const coaches = [
 		specialty: 'BJJ',
 		experience: '7 anos como professor',
 		achievements: 'Faixa preta, Tetra campeão Grand Slam Portugal',
-		image: PlaceholderImage,
+		image: NoImage,
 	},
 ];
 

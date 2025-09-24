@@ -54,28 +54,7 @@ const CoachDetail = ({ coach }) => {
     return isMainImage ? 'center -150px' : 'center -40px';
   };
 
-  // Default coach data for demonstration
-  const defaultCoach = {
-    id: 'filipe-albergaria',
-    name: 'Filipe Albergaria',
-    modality: 'kickboxing',
-    bio: 'Head Coach do NFK Training Center com mais de 15 anos de experiência em desportos de combate. Especialista em kickboxing, boxe e preparação física, Filipe tem dedicado a sua carreira a formar campeões e a inspirar atletas de todos os níveis.',
-    images: [
-      'https://images.pexels.com/photos/4761670/pexels-photo-4761670.jpg',
-      'https://images.pexels.com/photos/4752861/pexels-photo-4752861.jpg',
-      'https://images.pexels.com/photos/4761654/pexels-photo-4761654.jpg',
-      'https://images.pexels.com/photos/3601094/pexels-photo-3601094.jgg'
-    ],
-    accomplishments: [
-      'Head Coach certificado em Kickboxing e Boxe',
-      'Mais de 15 anos de experiência em treino de combate',
-      'Formou múltiplos campeões nacionais e internacionais',
-      'Especialista em preparação física para atletas de combate',
-      'Instrutor certificado em Bag Workout e condicionamento',
-      'Mentor de mais de 500 atletas ao longo da carreira',
-      'Desenvolveu programas de treino inovadores para todos os níveis'
-    ]
-  };
+
 
   const coachData = coach || defaultCoach;
 

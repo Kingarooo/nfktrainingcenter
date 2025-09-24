@@ -22,7 +22,7 @@ import {
   RafaelThumbnail01,
   RafaelThumbnail02,
   RafaelThumbnail03,
-  PlaceholderImage
+  NoImage
 } from '../../constants/coachImages';
 
 // Sample coach data - replace with your actual data source
@@ -140,10 +140,10 @@ const coachesData = {
     modality: 'bjj',
     bio: '"Com 7 anos como professor e faixa preta há 3 anos, o meu estilo de ensino é estratégico, focando na técnica e na mentalidade do Jiu-Jitsu. Sou também professor de boxe e fundador da equipa Art Suave Lapelas." Fernando é um competidor ativo com múltiplas conquistas nacionais e internacionais.',
     images: [
-      PlaceholderImage,
-      PlaceholderImage,
-      PlaceholderImage,
-      PlaceholderImage
+      NoImage,
+      NoImage,
+      NoImage,
+      NoImage
     ],
     accomplishments: [
       'Faixa preta 1º grau (3 anos como faixa preta)',

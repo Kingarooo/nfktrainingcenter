@@ -25,9 +25,11 @@ import RafaelThumbnail01 from '../assets/coaches/Rafael/Rafael_thumbnail_01.jpg'
 import RafaelThumbnail02 from '../assets/coaches/Rafael/Rafael_thumbnail_02.jpg';
 import RafaelThumbnail03 from '../assets/coaches/Rafael/Rafael_thumbnail_03.jpg';
 
-import PlaceholderImage from '../assets/coaches/placeholder.jpg';
+import bgHero from '../assets/bgHero.jpeg';
+import NoImage from '../assets/NoImage.jpg';
 
 export {
+  bgHero,
   // Filipe
   FilipePfp,
   FilipeThumbnail01,
@@ -58,7 +60,7 @@ export {
   RafaelThumbnail01,
   RafaelThumbnail02,
   RafaelThumbnail03,
-  
-  // Placeholder
-  PlaceholderImage
+
+  // No Image
+  NoImage
 };

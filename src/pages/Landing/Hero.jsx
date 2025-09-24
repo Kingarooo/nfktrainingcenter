@@ -2,7 +2,7 @@ import React from 'react';
 import { ChevronDown } from 'lucide-react';
 import CallToActionModal from './CallToActionModal';
 import ActionButton from '../../components/shared/ActionButton';
-
+import { bgHero } from '../../constants/coachImages';
 const Hero = () => {
   const [modalOpen, setModalOpen] = React.useState(false);
   const [shake, setShake] = React.useState(true);
@@ -29,24 +29,12 @@ const Hero = () => {
     setModalOpen(false);
   };
 
-  const playSound = () => {
-    const audio = document.getElementById('bell-audio');
-    if (audio) {
-      audio.currentTime = 0;
-      audio.play().catch(error => {
-        console.log('Audio play failed:', error);
-        // Audio play failed, but continue without sound
-      });
-    }
-  };
-
   return (
     <section className="relative min-h-screen pb-20 flex items-center justify-center overflow-hidden">
-      <audio id="bell-audio" src="/assets/bell.mp3" preload="auto" />
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.pexels.com/photos/4752861/pexels-photo-4752861.jpeg" 
+          src={bgHero} 
           alt="Combat Training" 
           className="w-full h-full object-cover"
         />
