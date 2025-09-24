@@ -1,6 +1,6 @@
 import React from 'react';
 import { Target, Users, Award } from 'lucide-react';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const About = () => {
   const [titleRef, titleVisible] = useScrollAnimation(0.2);
@@ -21,7 +21,7 @@ const About = () => {
               Nascido na luta
             </h3>
             <h2 className="font-bebas text-5xl md:text-6xl mb-6 text-nfk-red">
-               Construído com respeito.
+                Construído com respeito.
             </h2>
           </div>
           

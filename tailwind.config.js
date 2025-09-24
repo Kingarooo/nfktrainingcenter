@@ -8,6 +8,7 @@ export default {
         'nfk-dark': '#111111',
         'nfk-gray': '#1a1a1a',
         'nfk-red': '#e10600',
+        'nfk-dark-red': '#b00000',
         'nfk-white': '#ffffff',
       },
       fontFamily: {
@@ -18,7 +19,8 @@ export default {
         'fade-in': 'fadeIn 0.6s ease-out',
         'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
         'slide-up': 'slideUp 0.8s ease-out',
-        'glow': 'glow 2s ease-in-out infinite alternate',
+        'shake': 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
+        'glow': 'glow 1.5s ease-in-out infinite alternate',
       },
       keyframes: {
         fadeIn: {
@@ -36,6 +38,12 @@ export default {
         glow: {
           '0%': { boxShadow: '0 0 5px #e10600' },
           '100%': { boxShadow: '0 0 20px #e10600, 0 0 30px #e10600' },
+        },
+        shake: {
+          '10%, 90%': { transform: 'translate3d(-1px, 0, 0)' },
+          '20%, 80%': { transform: 'translate3d(2px, 0, 0)' },
+          '30%, 50%, 70%': { transform: 'translate3d(-4px, 0, 0)' },
+          '40%, 60%': { transform: 'translate3d(4px, 0, 0)' },
         },
       },
     },
