@@ -10,8 +10,10 @@ export default function App() {
   const location = useLocation();
 
   // Function to handle navigation to the Schedules page
-  const navigateToSchedules = () => {
-    navigate('/schedules');
+  const navigateToSchedules = (e) => {
+    // prevent the native anchor behavior so the router can handle navigation
+    e?.preventDefault();
+    navigate('/horarios');
     setIsMenuOpen(false);
   };
 
@@ -32,7 +34,7 @@ export default function App() {
 
   const menuItems = [
     { name: "Modalidades", href: "#modalidades", onClick: (e) => goTo(e, 'modalidades') },
-    { name: "Horários", href: "#horarios", onClick: navigateToSchedules },
+    { name: "Horários", href: "/horarios", onClick: navigateToSchedules },
     { name: "Contactos", href: "#contactos", onClick: (e) => goTo(e, 'contactos') }
   ];
 
@@ -76,7 +78,7 @@ export default function App() {
                 href={item.href}
                 onClick={item.onClick}
                 className={`hover:text-nfk-red transition-colors duration-200 font-bebas text-2xl bg-white/10 hover:bg-white/25 rounded-lg px-6 py-3 max-w-40 ${
-                  item.name === "Horários" && location.pathname === '/schedules' 
+                  item.name === "Horários" && location.pathname === '/horarios' 
                     ? 'text-nfk-red bg-white/25' 
                     : ''
                 }`}

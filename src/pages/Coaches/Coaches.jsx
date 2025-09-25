@@ -81,7 +81,7 @@ const Coaches = () => {
 	};
 
 	const handleCoachClick = (coachId) => {
-		navigate(`/coach/${coachId}`);
+		navigate(`/treinador/${coachId}`);
 	};
 	return (
 		<section id="coaches" className="py-20 px-4 bg-nfk-dark">

@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import CoachDetails from './CoachDetails';
 import {
   FilipePfp,
@@ -163,6 +163,16 @@ const coachesData = {
 const CoachPage = () => {
   const { id } = useParams();
   const coach = coachesData[id];
+  const navigate = useNavigate();
+
+  const NavigateButton = () => (
+    <button
+      onClick={() => navigate('/')}
+      className="inline-block px-6 py-3 border-2 border-nfk-red bg-transparent hover:bg-nfk-red transition-colors duration-300 font-bebas text-lg tracking-wider"
+    >
+      VOLTAR À PÁGINA INICIAL
+    </button>
+  );
 
   if (!coach) {
     return (
@@ -170,12 +180,8 @@ const CoachPage = () => {
         <div className="text-center">
           <h1 className="font-bebas text-4xl text-nfk-red mb-4">TREINADOR NÃO ENCONTRADO</h1>
           <p className="text-gray-400 mb-6">O treinador que procura não existe ou foi removido.</p>
-          <a
-            href="/"
-            className="inline-block px-6 py-3 border-2 border-nfk-red bg-transparent hover:bg-nfk-red transition-colors duration-300 font-bebas text-lg tracking-wider"
-          >
-            VOLTAR À PÁGINA INICIAL
-          </a>
+          {/* use react-router navigate to avoid full page reload */}
+          <NavigateButton />
         </div>
       </div>
     );

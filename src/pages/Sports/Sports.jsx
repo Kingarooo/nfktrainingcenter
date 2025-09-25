@@ -103,7 +103,7 @@ const Sports = () => {
           {sports.map((sport, index) => (
             <div 
               key={index}
-              onClick={() => navigate(`/sport/${sport.name.toLowerCase()}`)}
+              onClick={() => navigate(`/modalidade/${sport.name.toLowerCase()}`)}
               className={`group relative overflow-hidden bg-nfk-gray border border-nfk-gray hover:border-nfk-red transition-all duration-300 transform hover:scale-105 ${
                 gridVisible ? 'animate-fade-in-up' : ''
               }`}
