@@ -95,8 +95,8 @@ const coachesData = {
   'marco-antonio': {
     id: 'marco-antonio',
     name: 'Marco Aurélio (Marcão)',
-    modality: 'bjj',
-    bio: '"Com 25 anos como professor e faixa preta há 17 anos, sou parte da equipa percursora de BJJ no Norte de Portugal. O meu estilo de ensino é dinâmico e versátil, adaptando-me às necessidades de cada aluno." Marcão é uma referência no Jiu-Jitsu português, combinando vasta experiência com inovação no ensino.',
+    modality: 'Jiu-Jitsu',
+    bio: '"Com 25 anos como professor e faixa preta há 17 anos, sou parte da equipa percursora de Jiu-Jitsu no Norte de Portugal. O meu estilo de ensino é dinâmico e versátil, adaptando-me às necessidades de cada aluno." Marcão é uma referência no Jiu-Jitsu português, combinando vasta experiência com inovação no ensino.',
     images: [
       MarcaoPfp,
       MarcaoThumbnail01,
@@ -137,7 +137,7 @@ const coachesData = {
   'fernando-teixeira': {
     id: 'fernando-teixeira',
     name: 'Fernando Teixeira (Nando/Nandinho)',
-    modality: 'bjj',
+    modality: 'jiu-jitsu',
     bio: '"Com 7 anos como professor e faixa preta há 3 anos, o meu estilo de ensino é estratégico, focando na técnica e na mentalidade do Jiu-Jitsu. Sou também professor de boxe e fundador da equipa Art Suave Lapelas." Fernando é um competidor ativo com múltiplas conquistas nacionais e internacionais.',
     images: [
       NoImage,

@@ -168,7 +168,7 @@ const scheduleOptions = [
     schedule: karateSchedule,
   },
   {
-    key: "BJJ",
+    key: "Jiu-Jitsu",
     labels: ["Jiu-Jitsu", "Jiu-Jitsu Kids"],
     schedule: bjjSchedule,
   },
@@ -178,6 +178,18 @@ const Schedules = () => {
   const [selected, setSelected] = useState("Kickboxing");
   const [selectedDay, setSelectedDay] = useState("Toda a Semana");
   const selectedSchedule = scheduleOptions.find(opt => opt.key === selected)?.schedule;
+
+  // Keep the URL hash in sync with the currently selected sport (no history entries)
+  React.useEffect(() => {
+    try {
+      const encoded = encodeURIComponent(selected);
+      if (decodeURIComponent(window.location.hash.replace('#', '')) !== selected) {
+        window.history.replaceState(null, '', window.location.pathname + '#' + encoded);
+      }
+    } catch (err) {
+      // ignore
+    }
+  }, [selected]);
 
   const dayOptions = [
     "Toda a Semana",
