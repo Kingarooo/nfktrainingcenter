@@ -91,6 +91,26 @@ const mergeSchedules = (primary = {}, secondary = {}) => {
 
 const kickboxingWithMuay = mergeSchedules(kickboxingSchedule, muaythaiSchedule);
 
+// Bag Workout schedule (to be coupled with Boxing)
+const bagSchedule = {
+  Segunda: [
+    { time: "10:30 - 11:15", class: "Bag Workout" }
+  ],
+  Terça: [],
+  Quarta: [
+    { time: "10:30 - 11:15", class: "Bag Workout" }
+  ],
+  Quinta: [],
+  Sexta: [
+    { time: "10:30 - 11:15", class: "Bag Workout" }
+  ],
+  Sábado: [],
+  Domingo: commonSunday
+};
+
+// Merge Boxing with Bag Workout so Bag classes appear alongside Boxe
+const boxingWithBag = mergeSchedules(boxingSchedule, bagSchedule);
+
 // Jiu-Jitsu (adultos) schedule
 const bjjSchedule = {
   Segunda: [
@@ -139,8 +159,8 @@ const scheduleOptions = [
   },
   {
     key: "Boxing",
-    labels: ["Boxe"],
-    schedule: boxingSchedule,
+    labels: ["Boxe", "Bag Workout"],
+    schedule: boxingWithBag,
   },
   {
     key: "Karaté",
