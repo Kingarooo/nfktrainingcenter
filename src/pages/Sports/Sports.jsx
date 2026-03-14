@@ -44,9 +44,7 @@ const sports = [
     image: BjjThumbnail,
     description: 'A arte suave brasileira.',
     submodalities: [
-      'Jiu Jitsu Adultos',
-      'Jiu Jitsu Kids (4 aos 6 anos)',
-      'Jiu Jitsu Kids (7 aos 13 anos)'
+      'Jiu Jitsu Adultos'
     ]
   },
   {
@@ -103,7 +101,7 @@ const Sports = () => {
           {sports.map((sport, index) => (
             <div 
               key={index}
-              onClick={() => navigate(`/sport/${sport.name.toLowerCase()}`)}
+              onClick={() => navigate(`/modalidade/${sport.name.toLowerCase()}`)}
               className={`group relative overflow-hidden bg-nfk-gray border border-nfk-gray hover:border-nfk-red transition-all duration-300 transform hover:scale-105 ${
                 gridVisible ? 'animate-fade-in-up' : ''
               }`}

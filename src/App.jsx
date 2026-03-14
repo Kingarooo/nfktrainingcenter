@@ -14,10 +14,10 @@ function App() {
         <Navbar />
         <ScrollToTop />
         <Routes>
-          <Route path="/schedules" element={<Schedules />} />
+          <Route path="/horarios" element={<Schedules />} />
           <Route path="/" element={<Landing />} />
-          <Route path="/coach/:id" element={<CoachPage />} />
-          <Route path="/sport/:name" element={<SportPage />} />
+          <Route path="/treinador/:id" element={<CoachPage />} />
+          <Route path="/modalidade/:name" element={<SportPage />} />
         </Routes>
         <Footer />
       </div>

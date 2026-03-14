@@ -91,6 +91,26 @@ const mergeSchedules = (primary = {}, secondary = {}) => {
 
 const kickboxingWithMuay = mergeSchedules(kickboxingSchedule, muaythaiSchedule);
 
+// Bag Workout schedule (to be coupled with Boxing)
+const bagSchedule = {
+  Segunda: [
+    { time: "10:30 - 11:15", class: "Bag Workout" }
+  ],
+  Terça: [],
+  Quarta: [
+    { time: "10:30 - 11:15", class: "Bag Workout" }
+  ],
+  Quinta: [],
+  Sexta: [
+    { time: "10:30 - 11:15", class: "Bag Workout" }
+  ],
+  Sábado: [],
+  Domingo: commonSunday
+};
+
+// Merge Boxing with Bag Workout so Bag classes appear alongside Boxe
+const boxingWithBag = mergeSchedules(boxingSchedule, bagSchedule);
+
 // Jiu-Jitsu (adultos) schedule
 const bjjSchedule = {
   Segunda: [
@@ -139,8 +159,8 @@ const scheduleOptions = [
   },
   {
     key: "Boxing",
-    labels: ["Boxe"],
-    schedule: boxingSchedule,
+    labels: ["Boxe", "Bag Workout"],
+    schedule: boxingWithBag,
   },
   {
     key: "Karaté",
@@ -148,8 +168,8 @@ const scheduleOptions = [
     schedule: karateSchedule,
   },
   {
-    key: "BJJ",
-    labels: ["Jiu-Jitsu", "Jiu-Jitsu Kids"],
+    key: "Jiu-Jitsu",
+    labels: ["Jiu-Jitsu"],
     schedule: bjjSchedule,
   },
 ];
@@ -158,6 +178,18 @@ const Schedules = () => {
   const [selected, setSelected] = useState("Kickboxing");
   const [selectedDay, setSelectedDay] = useState("Toda a Semana");
   const selectedSchedule = scheduleOptions.find(opt => opt.key === selected)?.schedule;
+
+  // Keep the URL hash in sync with the currently selected sport (no history entries)
+  React.useEffect(() => {
+    try {
+      const encoded = encodeURIComponent(selected);
+      if (decodeURIComponent(window.location.hash.replace('#', '')) !== selected) {
+        window.history.replaceState(null, '', window.location.pathname + '#' + encoded);
+      }
+    } catch (err) {
+      // ignore
+    }
+  }, [selected]);
 
   const dayOptions = [
     "Toda a Semana",

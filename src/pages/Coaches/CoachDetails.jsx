@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowLeft, Award, Star, Target, Instagram } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 // Modal icon components based on modality
 const ModalityIcon = ({ modality, className }) => {
@@ -66,6 +66,22 @@ const CoachDetail = ({ coach }) => {
   const handleBackClick = () => {
     navigate(-1);
   };
+
+  const scheduleUrl = `${window.location.origin}/horarios`;
+  const emailSubject = `Pedido de aula experimental - ${coachData.name}`;
+  const emailBody = `Olá equipa NFK,
+
+Quero agendar uma aula experimental com ${coachData.name}.
+
+Antes de marcar, vou consultar os horários aqui: ${scheduleUrl}
+
+Nome:
+Telefone:
+Modalidade:
+Horário preferido:
+
+Obrigado(a)!`;
+  const mailtoHref = `mailto:fluvial.kickboxing@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
 
   return (
     <main className="min-h-screen bg-nfk-black text-nfk-white py-8">
@@ -195,6 +211,12 @@ const CoachDetail = ({ coach }) => {
               <p className="text-gray-400 font-bold text-sm">
                 Interessado em treinar com este coach? Entre em contacto connosco para agendar a sua aula experimental gratuita.
               </p>
+              <p className="text-gray-400 text-sm">
+                Consulte os horários antes de marcar:{' '}
+                <Link to="/horarios" className="text-nfk-red hover:underline">
+                  ver página de horários
+                </Link>
+              </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
                   href="tel:+351916452684"
@@ -203,7 +225,7 @@ const CoachDetail = ({ coach }) => {
                   LIGAR AGORA
                 </a>
                 <a
-                  href="mailto:fluvial.kickboxing@gmail.com"
+                  href={mailtoHref}
                   className="inline-block px-6 py-3 border-2 border-nfk-red bg-transparent hover:bg-nfk-red transition-colors duration-300 text-center font-bebas text-lg tracking-wider"
                 >
                   ENVIAR EMAIL

@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import CoachDetails from './CoachDetails';
 import {
   FilipePfp,
@@ -95,8 +95,8 @@ const coachesData = {
   'marco-antonio': {
     id: 'marco-antonio',
     name: 'Marco Aurélio (Marcão)',
-    modality: 'bjj',
-    bio: '"Com 25 anos como professor e faixa preta há 17 anos, sou parte da equipa percursora de BJJ no Norte de Portugal. O meu estilo de ensino é dinâmico e versátil, adaptando-me às necessidades de cada aluno." Marcão é uma referência no Jiu-Jitsu português, combinando vasta experiência com inovação no ensino.',
+    modality: 'Jiu-Jitsu',
+    bio: '"Com 25 anos como professor e faixa preta há 17 anos, sou parte da equipa percursora de Jiu-Jitsu no Norte de Portugal. O meu estilo de ensino é dinâmico e versátil, adaptando-me às necessidades de cada aluno." Marcão é uma referência no Jiu-Jitsu português, combinando vasta experiência com inovação no ensino.',
     images: [
       MarcaoPfp,
       MarcaoThumbnail01,
@@ -137,7 +137,7 @@ const coachesData = {
   'fernando-teixeira': {
     id: 'fernando-teixeira',
     name: 'Fernando Teixeira (Nando/Nandinho)',
-    modality: 'bjj',
+    modality: 'jiu-jitsu',
     bio: '"Com 7 anos como professor e faixa preta há 3 anos, o meu estilo de ensino é estratégico, focando na técnica e na mentalidade do Jiu-Jitsu. Sou também professor de boxe e fundador da equipa Art Suave Lapelas." Fernando é um competidor ativo com múltiplas conquistas nacionais e internacionais.',
     images: [
       NoImage,
@@ -163,6 +163,16 @@ const coachesData = {
 const CoachPage = () => {
   const { id } = useParams();
   const coach = coachesData[id];
+  const navigate = useNavigate();
+
+  const NavigateButton = () => (
+    <button
+      onClick={() => navigate('/')}
+      className="inline-block px-6 py-3 border-2 border-nfk-red bg-transparent hover:bg-nfk-red transition-colors duration-300 font-bebas text-lg tracking-wider"
+    >
+      VOLTAR À PÁGINA INICIAL
+    </button>
+  );
 
   if (!coach) {
     return (
@@ -170,12 +180,8 @@ const CoachPage = () => {
         <div className="text-center">
           <h1 className="font-bebas text-4xl text-nfk-red mb-4">TREINADOR NÃO ENCONTRADO</h1>
           <p className="text-gray-400 mb-6">O treinador que procura não existe ou foi removido.</p>
-          <a
-            href="/"
-            className="inline-block px-6 py-3 border-2 border-nfk-red bg-transparent hover:bg-nfk-red transition-colors duration-300 font-bebas text-lg tracking-wider"
-          >
-            VOLTAR À PÁGINA INICIAL
-          </a>
+          {/* use react-router navigate to avoid full page reload */}
+          <NavigateButton />
         </div>
       </div>
     );
