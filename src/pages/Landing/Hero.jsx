@@ -56,7 +56,7 @@ const Hero = () => {
         <p className="font-bebas text-xl md:text-2xl font-light mb-8 tracking-wide">
           Combate. Condição. Comunidade.
         </p>
-        <ActionButton onClick={() => { playSound(); openModal(); }}>
+        <ActionButton onClick={openModal}>
           EXPERIMENTA GRÁTIS
         </ActionButton>
       </div>

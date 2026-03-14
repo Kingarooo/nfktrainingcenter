@@ -44,9 +44,7 @@ const sports = [
     image: BjjThumbnail,
     description: 'A arte suave brasileira.',
     submodalities: [
-      'Jiu Jitsu Adultos',
-      'Jiu Jitsu Kids (4 aos 6 anos)',
-      'Jiu Jitsu Kids (7 aos 13 anos)'
+      'Jiu Jitsu Adultos'
     ]
   },
   {

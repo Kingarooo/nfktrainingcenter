@@ -169,7 +169,7 @@ const scheduleOptions = [
   },
   {
     key: "Jiu-Jitsu",
-    labels: ["Jiu-Jitsu", "Jiu-Jitsu Kids"],
+    labels: ["Jiu-Jitsu"],
     schedule: bjjSchedule,
   },
 ];
