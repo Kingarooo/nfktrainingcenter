@@ -11,7 +11,6 @@ export const kickboxingCoach = {
 export const karateCoach = {
   "Karaté Adultos": "Pedro Paiva",
   "Karaté Kids": "Pedro Paiva",
-  "Karaté Mini Kids": "Pedro Paiva"
 };
 
 export const jiujitsuCoach = {
@@ -86,10 +85,8 @@ export const kickboxingSchedule = {
 
 export const karateSchedule = {
   Segunda: [{ time: "18:00", class: "Karaté Kids" }, { time: "19:00", class: "Karaté Adultos" }],
-  Quarta: [{ time: "18:00", class: "Karaté Mini Kids" }, { time: "19:00", class: "Karaté Adultos" }],
+  Quarta: [{ time: "18:00", class: "Karaté Kids" }, { time: "19:00", class: "Karaté Adultos" }],
   Sábado: [
-    { time: "09:00", class: "Karaté Adultos" },
-    { time: "10:00", class: "Karaté Mini Kids" },
     { time: "11:00", class: "Karaté Kids" },
     { time: "12:00", class: "Karaté Adultos" }
   ],

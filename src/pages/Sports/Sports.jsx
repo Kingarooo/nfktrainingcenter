@@ -15,12 +15,10 @@ const sports = [
     image: KickboxingThumbnail,
     description: 'Combinação perfeita de punhos e pernas com a arte das oito armas.',
     submodalities: [
-      'Geral',
-      'Funcional',
-      'Kickboxing - Iniciados',
-      'Kickboxing - Avançados',
-      'Muay Thai - Iniciados',
-      'Muay Thai - Avançados'
+      'Kick/Muay Geral',
+      'Kick/Muay Funcional',
+      'Kick/Muay Iniciados',
+      'Kick/Muay Avançados'
     ]
   },
   {
@@ -39,7 +37,6 @@ const sports = [
     submodalities: [
       'Karaté Adultos',
       'Karaté Kids',
-      'Karaté Mini Kids'
     ]
   }
 ];

@@ -45,7 +45,6 @@ const sports = [
     submodalities: [
       'Karaté Adultos',
       'Karaté Kids',
-      'Karaté Mini Kids'
     ]
   }
 ];

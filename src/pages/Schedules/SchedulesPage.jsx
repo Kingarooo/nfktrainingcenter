@@ -8,33 +8,33 @@ const commonSunday = [
 // Kickboxing & Muaythai schedule, organized by training level (includes Geral/Funcional conditioning classes)
 const kickboxingMuaythaiSchedule = {
   Segunda: [
-    { time: "07:00", class: "Geral" },
-    { time: "18:00", class: "Iniciados" },
-    { time: "19:00", class: "Avançados / Competição" }
+    { time: "07:00", class: "Kick/Muay Geral" },
+    { time: "18:00", class: "Kick/Muay Iniciados" },
+    { time: "19:00", class: "Kick/Muay Avançados / Competição" }
   ],
   Terça: [
-    { time: "18:00", class: "Funcional" },
-    { time: "19:00", class: "Geral" },
-    { time: "20:00", class: "Geral" }
+    { time: "18:00", class: "Kick/Muay Funcional" },
+    { time: "19:00", class: "Kick/Muay Geral" },
+    { time: "20:00", class: "Kick/Muay Geral" }
   ],
   Quarta: [
-    { time: "07:00", class: "Geral" },
-    { time: "18:00", class: "Iniciados" },
-    { time: "19:00", class: "Avançados / Competição" }
+    { time: "07:00", class: "Kick/Muay Geral" },
+    { time: "18:00", class: "Kick/Muay Iniciados" },
+    { time: "19:00", class: "Kick/Muay Avançados / Competição" }
   ],
   Quinta: [
-    { time: "18:00", class: "Funcional" },
-    { time: "19:00", class: "Geral" },
-    { time: "20:00", class: "Geral" }
+    { time: "18:00", class: "Kick/Muay Funcional" },
+    { time: "19:00", class: "Kick/Muay Geral" },
+    { time: "20:00", class: "Kick/Muay Geral" }
   ],
   Sexta: [
-    { time: "07:00", class: "Geral" },
-    { time: "18:00", class: "Treino de Saco" },
-    { time: "19:00", class: "Geral" },
-    { time: "20:00", class: "Geral" }
+    { time: "07:00", class: "Kick/Muay Geral" },
+    { time: "18:00", class: "Kick/Muay Treino de Saco" },
+    { time: "19:00", class: "Kick/Muay Geral" },
+    { time: "20:00", class: "Kick/Muay Geral" }
   ],
   Sábado: [
-    { time: "11:00", class: "Sparring" }
+    { time: "11:00", class: "Kick/Muay Sparring" }
   ],
   Domingo: commonSunday
 };
@@ -85,10 +85,43 @@ const karateSchedule = {
   Domingo: commonSunday
 };
 
+// Merge multiple schedules into one, sorted by time within each day, joining classes that share a time slot
+const combineSchedules = (...schedules) => {
+  const timeToMinutes = (time) => {
+    const [h, m] = time.split(':').map(Number);
+    return h * 60 + (m || 0);
+  };
+  const days = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
+  const combined = {};
+  days.forEach((day) => {
+    const sorted = schedules
+      .flatMap((schedule) => schedule[day] || [])
+      .sort((a, b) => timeToMinutes(a.time) - timeToMinutes(b.time));
+
+    const grouped = [];
+    sorted.forEach((entry) => {
+      const last = grouped[grouped.length - 1];
+      if (last && last.time === entry.time) {
+        last.class += `\n${entry.class}`;
+      } else {
+        grouped.push({ ...entry });
+      }
+    });
+    combined[day] = grouped;
+  });
+  combined.Domingo = commonSunday;
+  return combined;
+};
+
 const scheduleOptions = [
   {
+    key: "Todos",
+    labels: ["Todas as Modalidades"],
+    schedule: combineSchedules(kickboxingMuaythaiSchedule, bjjSchedule, karateSchedule),
+  },
+  {
     key: "Kickboxing",
-    labels: ["Kickboxing", "Muaythai", "Geral", "Funcional"],
+    labels: ["Kickboxing", "Muaythai"],
     schedule: kickboxingMuaythaiSchedule,
   },
   {
@@ -104,7 +137,7 @@ const scheduleOptions = [
 ];
 
 const Schedules = () => {
-  const [selected, setSelected] = useState("Kickboxing");
+  const [selected, setSelected] = useState("Todos");
   const [selectedDay, setSelectedDay] = useState("Toda a Semana");
   const selectedSchedule = scheduleOptions.find(opt => opt.key === selected)?.schedule;
 
