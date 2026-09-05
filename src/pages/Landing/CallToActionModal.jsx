@@ -19,7 +19,7 @@ Modalidade:
 Horário preferido:
 
 Obrigado(a)!`;
-  const mailtoHref = `mailto:fluvial.kickboxing@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+  const mailtoHref = `mailto: nfktrainingcenter@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
@@ -46,7 +46,7 @@ Obrigado(a)!`;
           </a>
           <a href={mailtoHref} className="flex items-center space-x-2 text-gray-200 hover:text-nfk-red transition-colors justify-center">
             <Mail className="w-5 h-5" />
-            <span>fluvial.kickboxing@gmail.com</span>
+            <span> nfktrainingcenter@gmail.com</span>
           </a>
         </div>
       </div>

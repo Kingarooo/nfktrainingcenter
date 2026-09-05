@@ -61,7 +61,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-nfk-red" />
-                <a href="mailto:fluvial.kickboxing@gmail.com" className="text-gray-400 text-sm hover:text-nfk-red transition-colors duration-300">fluvial.kickboxing@gmail.com</a>
+                <a href="mailto: nfktrainingcenter@gmail.com" className="text-gray-400 text-sm hover:text-nfk-red transition-colors duration-300"> nfktrainingcenter@gmail.com</a>
               </div>
             </div>
           </div>

@@ -81,7 +81,7 @@ Modalidade:
 Horário preferido:
 
 Obrigado(a)!`;
-  const mailtoHref = `mailto:fluvial.kickboxing@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+  const mailtoHref = `mailto: nfktrainingcenter@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
 
   return (
     <main className="min-h-screen bg-nfk-black text-nfk-white py-8">
