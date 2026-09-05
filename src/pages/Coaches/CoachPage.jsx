@@ -134,29 +134,18 @@ const coachesData = {
       'Mentor de novos talentos do MMA'
     ]
   },
-  'fernando-teixeira': {
-    id: 'fernando-teixeira',
-    name: 'Fernando Teixeira (Nando/Nandinho)',
-    modality: 'jiu-jitsu',
-    bio: '"Com 7 anos como professor e faixa preta há 3 anos, o meu estilo de ensino é estratégico, focando na técnica e na mentalidade do Jiu-Jitsu. Sou também professor de boxe e fundador da equipa Art Suave Lapelas." Fernando é um competidor ativo com múltiplas conquistas nacionais e internacionais.',
+  'renan-bernardes': {
+    id: 'renan-bernardes',
+    name: 'Renan Bernardes',
+    modality: 'jiu-jitsu-no-gi',
+    bio: '', // pending: bio to be provided
     images: [
       NoImage,
       NoImage,
       NoImage,
       NoImage
     ],
-    accomplishments: [
-      'Faixa preta 1º grau (3 anos como faixa preta)',
-      '7 anos como professor de Jiu-Jitsu',
-      'Professor de boxe certificado',
-      'Fundador da equipa Art Suave Lapelas',
-      'Campeão português como faixa preta',
-      'Campeão open nacional',
-      'Tetra campeão Grand Slam Portugal',
-      'Campeão Absoluto no Grand Slam Portugal',
-      'Campeão AGP no-gi',
-      'Pai de campeã nacional juvenil'
-    ]
+    accomplishments: [] // pending: accomplishments to be provided
   }
 };
 

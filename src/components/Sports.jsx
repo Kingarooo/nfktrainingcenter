@@ -34,7 +34,8 @@ const sports = [
     image: BjjThumbnail,
     description: 'A arte suave brasileira.',
     submodalities: [
-      'Jiu Jitsu Adultos'
+      'Jiu Jitsu Adultos',
+      'Jiu Jitsu No Gi'
     ]
   },
   {

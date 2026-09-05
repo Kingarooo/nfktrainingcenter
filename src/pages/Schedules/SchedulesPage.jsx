@@ -5,90 +5,82 @@ import ActionButton from "../../components/shared/ActionButton";
 const commonSunday = [
   { time: "Descanso", class: "Até os guerreiros merecem descanso" }
 ];
-// Boxing / Boxe schedule
-const boxingSchedule = {
-  Segunda: [
-    { time: "07:00 - 08:00", class: "Geral" },
-    { time: "18:00", class: "Boxe" }
-  ],
-  Terça: [
-    { time: "18:00 - 19:00", class: "Funcional" },
-    { time: "19:00 - 20:30", class: "Geral" }
-  ],
-  Quarta: [
-    { time: "07:00 - 08:00", class: "Geral" },
-    { time: "18:00", class: "Boxe" }
-  ],
-  Quinta: [
-    { time: "18:00 - 19:00", class: "Funcional" },
-    { time: "19:00 - 20:30", class: "Geral" }
-  ],
-  Sexta: [
-    { time: "07:00 - 08:00", class: "Geral" },
-    { time: "18:00", class: "Boxe" },
-    { time: "19:00 - 20:30", class: "Geral" }
-  ],
-  Sábado: [],
-  Domingo: commonSunday
-};
-
-// Kickboxing & Muaythai schedule, organized by training level
+// Kickboxing & Muaythai schedule, organized by training level (includes Geral/Funcional conditioning classes)
 const kickboxingMuaythaiSchedule = {
   Segunda: [
-    { time: "18:00 - 19:00", class: "Iniciados" },
-    { time: "19:00 - 20:00", class: "Avançados / Competição" }
+    { time: "07:00", class: "Geral" },
+    { time: "18:00", class: "Iniciados" },
+    { time: "19:00", class: "Avançados / Competição" }
   ],
-  Terça: [],
+  Terça: [
+    { time: "18:00", class: "Funcional" },
+    { time: "19:00", class: "Geral" },
+    { time: "20:00", class: "Geral" }
+  ],
   Quarta: [
-    { time: "18:00 - 19:00", class: "Iniciados" },
-    { time: "19:00 - 20:00", class: "Avançados / Competição" }
+    { time: "07:00", class: "Geral" },
+    { time: "18:00", class: "Iniciados" },
+    { time: "19:00", class: "Avançados / Competição" }
   ],
-  Quinta: [],
+  Quinta: [
+    { time: "18:00", class: "Funcional" },
+    { time: "19:00", class: "Geral" },
+    { time: "20:00", class: "Geral" }
+  ],
   Sexta: [
-    { time: "18:00 - 19:00", class: "Treino de Saco" }
+    { time: "07:00", class: "Geral" },
+    { time: "18:00", class: "Treino de Saco" },
+    { time: "19:00", class: "Geral" },
+    { time: "20:00", class: "Geral" }
   ],
   Sábado: [
-    { time: "11:00 - 12:00", class: "Sparring" }
+    { time: "11:00", class: "Sparring" }
   ],
   Domingo: commonSunday
 };
 
-// Jiu-Jitsu (adultos) schedule
+// Jiu-Jitsu (adultos) schedule, includes No-Gi category
 const bjjSchedule = {
   Segunda: [
     { time: "12:00", class: "Jiu-Jitsu" },
     { time: "20:00", class: "Jiu-Jitsu" }
   ],
-  Terça: [],
-  Quarta: [
-    { time: "12:00", class: "Jiu-Jitsu" }
+  Terça: [
+    { time: "20:00", class: "Jiu-Jitsu" }
   ],
-  Quinta: [],
+  Quarta: [
+    { time: "12:00", class: "Jiu-Jitsu" },
+    { time: "20:00", class: "Jiu-Jitsu" }
+  ],
+  Quinta: [
+    { time: "20:00", class: "Jiu-Jitsu" }
+  ],
   Sexta: [
     { time: "12:00", class: "Jiu-Jitsu" },
     { time: "20:00", class: "Jiu-Jitsu" }
   ],
-  Sábado: [],
+  Sábado: [
+    { time: "12:00", class: "No-Gi" }
+  ],
   Domingo: commonSunday
 };
 
-// Karate schedules (baby and adults). Karatê Kids entries commented out for now.
+// Karate schedules (kids and adults)
 const karateSchedule = {
   Segunda: [
-    { time: "18:00", class: "Karatê Baby" },
+    { time: "18:00", class: "Karatê Kids" },
     { time: "19:00", class: "Karatê Adultos" }
   ],
   Terça: [],
   Quarta: [
-    { time: "18:00", class: "Karatê Baby" },
+    { time: "18:00", class: "Karatê Kids" },
     { time: "19:00", class: "Karatê Adultos" }
   ],
   Quinta: [],
   Sexta: [],
   Sábado: [
-    { time: "09:00", class: "Karatê Adultos" },
-    { time: "10:00", class: "Karatê Baby" }
-    // { time: "11:00", class: "Karatê Kids" } // Karatê Kids commented out for now
+    { time: "10:00", class: "Karatê Kids" },
+    { time: "11:00", class: "Karatê Adultos" }
   ],
   Domingo: commonSunday
 };
@@ -96,22 +88,17 @@ const karateSchedule = {
 const scheduleOptions = [
   {
     key: "Kickboxing",
-    labels: ["Kickboxing", "Muaythai"],
+    labels: ["Kickboxing", "Muaythai", "Geral", "Funcional"],
     schedule: kickboxingMuaythaiSchedule,
   },
   {
-    key: "Boxing",
-    labels: ["Geral", "Funcional"],
-    schedule: boxingSchedule,
-  },
-  {
     key: "Karaté",
-    labels: ["Karatê Baby", "Karatê Adultos"],
+    labels: ["Karatê Kids", "Karatê Adultos"],
     schedule: karateSchedule,
   },
   {
     key: "Jiu-Jitsu",
-    labels: ["Jiu-Jitsu"],
+    labels: ["Jiu-Jitsu", "No-Gi"],
     schedule: bjjSchedule,
   },
 ];

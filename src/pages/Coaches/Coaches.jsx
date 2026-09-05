@@ -54,11 +54,11 @@ const coaches = [
 		hidden: true, // temporarily removed, keep data in case he returns
 	},
 	{
-		id: 'fernando-teixeira',
-		name: 'Fernando Teixeira (Nando/Nandinho)',
-		specialty: 'BJJ',
-		experience: '7 anos como professor',
-		achievements: 'Faixa preta, Tetra campeão Grand Slam Portugal',
+		id: 'renan-bernardes',
+		name: 'Renan Bernardes',
+		specialty: 'JIU-JITSU NO-GI',
+		experience: '',
+		achievements: '',
 		image: NoImage,
 	},
 ];
@@ -76,7 +76,7 @@ const Coaches = () => {
 			'pedro-paiva': 'center -130px',
 			'marco-antonio': 'center -80px',
 			'rafael': 'center -25px',
-			'fernando-teixeira': 'center -30px'
+			'renan-bernardes': 'center -30px'
 		};
 		
 		return positionMap[coachId] || 'center -30px';

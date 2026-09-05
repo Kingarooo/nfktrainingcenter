@@ -3,7 +3,6 @@ import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import InfoIcon from '../../components/shared/InfoIcon';
 import {
   KickboxingThumbnail,
-  BoxeThumbnail,
   BjjThumbnail,
   KarateThumbnail
 } from '../../constants/sportImages';
@@ -16,6 +15,8 @@ const sports = [
     image: KickboxingThumbnail,
     description: 'Combinação perfeita de punhos e pernas com a arte das oito armas.',
     submodalities: [
+      'Geral',
+      'Funcional',
       'Kickboxing - Iniciados',
       'Kickboxing - Avançados',
       'Muay Thai - Iniciados',
@@ -23,20 +24,12 @@ const sports = [
     ]
   },
   {
-    name: 'GERAL E FUNCIONAL',
-    image: BoxeThumbnail,
-    description: 'Treino de alta intensidade para condição física e resistência.',
-    submodalities: [
-      'Geral',
-      'Funcional'
-    ]
-  },
-  {
     name: 'JIU JITSU',
     image: BjjThumbnail,
     description: 'A arte suave brasileira.',
     submodalities: [
-      'Jiu Jitsu Adultos'
+      'Jiu Jitsu Adultos',
+      'Jiu Jitsu No Gi',
     ]
   },
   {
