@@ -4,7 +4,6 @@ import InfoIcon from '../../components/shared/InfoIcon';
 import {
   KickboxingThumbnail,
   BoxeThumbnail,
-  MuaythaiThumbnail,
   BjjThumbnail,
   KarateThumbnail
 } from '../../constants/sportImages';
@@ -12,12 +11,15 @@ import { useNavigate } from 'react-router-dom';
 
 const sports = [
   {
-    name: 'KICKBOXING',
+    name: 'KICKBOXING / MUAY THAI',
+    slug: 'kickboxing-muaythai',
     image: KickboxingThumbnail,
-    description: 'Combinação perfeita de punhos e pernas.',
+    description: 'Combinação perfeita de punhos e pernas com a arte das oito armas.',
     submodalities: [
-      'Iniciados',
-      'Avançados'
+      'Kickboxing - Iniciados',
+      'Kickboxing - Avançados',
+      'Muay Thai - Iniciados',
+      'Muay Thai - Avançados'
     ]
   },
   {
@@ -27,15 +29,6 @@ const sports = [
     submodalities: [
       'Geral',
       'Funcional'
-    ]
-  },
-  {
-    name: 'MUAYTHAI',
-    image: MuaythaiThumbnail,
-    description: 'A arte das oito armas.',
-    submodalities: [
-      'Iniciados',
-      'Avançados'
     ]
   },
   {
@@ -100,7 +93,7 @@ const Sports = () => {
           {sports.map((sport, index) => (
             <div 
               key={index}
-              onClick={() => navigate(`/modalidade/${sport.name.toLowerCase()}`)}
+              onClick={() => navigate(`/modalidade/${sport.slug || sport.name.toLowerCase()}`)}
               className={`group relative overflow-hidden bg-nfk-gray border border-nfk-gray hover:border-nfk-red transition-all duration-300 transform hover:scale-105 ${
                 gridVisible ? 'animate-fade-in-up' : ''
               }`}

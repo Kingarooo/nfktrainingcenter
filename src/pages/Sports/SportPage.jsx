@@ -17,10 +17,8 @@ import KarateThumbnail from '../../assets/sport/karate/karate_thumbnail_01.jpg';
 
 const sportImages = {
   'geral e funcional': [BoxeThumbnail],
-  kickboxing: [KickboxingThumbnail01, KickboxingThumbnail02],
-  muaythai: [
-    MuaythaiThumbnail01, MuaythaiThumbnail02, MuaythaiThumbnail03, MuaythaiThumbnail04, MuaythaiThumbnail05,
-    MuaythaiThumbnail01, MuaythaiThumbnail02, MuaythaiThumbnail03, MuaythaiThumbnail04, MuaythaiThumbnail05,
+  'kickboxing-muaythai': [
+    KickboxingThumbnail01, KickboxingThumbnail02,
     MuaythaiThumbnail01, MuaythaiThumbnail02, MuaythaiThumbnail03, MuaythaiThumbnail04, MuaythaiThumbnail05
   ],
   'jiu jitsu': [JiujitsuThumbnail],
@@ -29,14 +27,14 @@ const sportImages = {
 
 const sportNames = {
   'geral e funcional': 'GERAL E FUNCIONAL',
-  kickboxing: 'KICKBOXING',
-  muaythai: 'MUAY THAI',
+  'kickboxing-muaythai': 'KICKBOXING / MUAY THAI',
   'jiu jitsu': 'JIU JITSU',
   karaté: 'KARATÉ'
 };
 
 const sportDescriptions = {
-  'geral e funcional': 'Aulas de treino funcional e condicionamento físico geral, pensadas para melhorar força, resistência e mobilidade através de exercícios dinâmicos e desafiantes, complementando a preparação física de qualquer atleta de combate.'
+  'geral e funcional': 'Aulas de treino funcional e condicionamento físico geral, pensadas para melhorar força, resistência e mobilidade através de exercícios dinâmicos e desafiantes, complementando a preparação física de qualquer atleta de combate.',
+  'kickboxing-muaythai': 'O Kickboxing e o Muay Thai são modalidades irmãs que combinam a potência dos golpes de punho e perna com a tradição da arte marcial tailandesa das oito armas. Nas nossas aulas, os alunos desenvolvem força, resistência e técnica num ambiente dinâmico e desafiante, adequado tanto a iniciantes como a atletas experientes.'
 };
 
 const SportPage = () => {
