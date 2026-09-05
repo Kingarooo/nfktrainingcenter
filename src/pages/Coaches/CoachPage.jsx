@@ -22,7 +22,11 @@ import {
   RafaelThumbnail01,
   RafaelThumbnail02,
   RafaelThumbnail03,
-  NoImage
+  RenanPfp,
+  RenanThumbnail01,
+  RenanThumbnail02,
+  RenanThumbnail03,
+  RenanThumbnail04
 } from '../../constants/coachImages';
 
 // Sample coach data - replace with your actual data source
@@ -138,14 +142,21 @@ const coachesData = {
     id: 'renan-bernardes',
     name: 'Renan Bernardes',
     modality: 'jiu-jitsu-no-gi',
-    bio: '', // pending: bio to be provided
+    bio: '"Compito desde o início da minha caminhada no Jiu-Jitsu, sendo faixa marrom e bicampeão europeu pela IBJJF. Dou aulas de No-Gi há pouco mais de um ano, focando sempre nas bases fundamentais e no rigor de execução." Renan traz uma abordagem técnica e disciplinada ao ensino, valorizando os detalhes que fazem a diferença no Jiu-Jitsu.',
     images: [
-      NoImage,
-      NoImage,
-      NoImage,
-      NoImage
+      RenanPfp,
+      RenanThumbnail01,
+      RenanThumbnail02,
+      RenanThumbnail03,
+      RenanThumbnail04
     ],
-    accomplishments: [] // pending: accomplishments to be provided
+    accomplishments: [
+      '2x campeão Europeu IBJJF',
+      '4x campeão Português FPJJB',
+      '4x campeão GrandSlam FPJJB',
+      '3x campeão Nacional FPJJB'
+    ],
+    instagram: '@renanbernardes10'
   }
 };
 

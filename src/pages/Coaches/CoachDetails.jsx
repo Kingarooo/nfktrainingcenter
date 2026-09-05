@@ -43,6 +43,7 @@ const CoachDetail = ({ coach }) => {
     const needsOpositePositioning = [
       'Filipe_thumbnail_01.jpg',
       'Filipe_thumbnail_02.jpg',
+      'Renan_pfp.jpg',
     ];
     if (needsExtraPositioning.includes(imageName)) {
       return isMainImage ? 'center -100px' : 'center -30px';

@@ -7,14 +7,14 @@ import {
   PedroPfp,
   MarcaoPfp,
   RafaelPfp,
-  NoImage
+  RenanPfp
 } from '../../constants/coachImages';
 
 const coaches = [
 	{
 		id: 'filipe-albergaria',
 		name: 'Filipe Albergaria',
-		specialty: 'HEAD COACH - KICKBOXING, BOXE, BAG WORKOUT',
+		specialty: 'HEAD COACH - KICKBOXING, MUAY THAI, CONDICIONAMENTO',
 		experience: 'Mais de 15 anos',
 		achievements: 'Especialista em desportos de combate e preparação física',
 		image: FilipePfp,
@@ -57,9 +57,9 @@ const coaches = [
 		id: 'renan-bernardes',
 		name: 'Renan Bernardes',
 		specialty: 'JIU-JITSU NO-GI',
-		experience: '',
-		achievements: '',
-		image: NoImage,
+		experience: 'Faixa marrom',
+		achievements: 'Bicampeão europeu IBJJF',
+		image: RenanPfp,
 	},
 ];
 
@@ -76,7 +76,7 @@ const Coaches = () => {
 			'pedro-paiva': 'center -130px',
 			'marco-antonio': 'center -80px',
 			'rafael': 'center -25px',
-			'renan-bernardes': 'center -30px'
+			'renan-bernardes': 'center -140px'
 		};
 		
 		return positionMap[coachId] || 'center -30px';

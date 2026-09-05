@@ -25,6 +25,12 @@ import RafaelThumbnail01 from '../assets/coaches/Rafael/Rafael_thumbnail_01.jpg'
 import RafaelThumbnail02 from '../assets/coaches/Rafael/Rafael_thumbnail_02.jpg';
 import RafaelThumbnail03 from '../assets/coaches/Rafael/Rafael_thumbnail_03.jpg';
 
+import RenanPfp from '../assets/coaches/Renan/Renan_pfp.jpg';
+import RenanThumbnail01 from '../assets/coaches/Renan/Renan_thumbnail_01.jpg';
+import RenanThumbnail02 from '../assets/coaches/Renan/Renan_thumbnail_02.jpg';
+import RenanThumbnail03 from '../assets/coaches/Renan/Renan_thumbnail_03.jpg';
+import RenanThumbnail04 from '../assets/coaches/Renan/Renan_thumbnail_04.jpg';
+
 import bgHero from '../assets/bgHero.jpeg';
 import NoImage from '../assets/NoImage.jpg';
 
@@ -60,6 +66,13 @@ export {
   RafaelThumbnail01,
   RafaelThumbnail02,
   RafaelThumbnail03,
+
+  // Renan
+  RenanPfp,
+  RenanThumbnail01,
+  RenanThumbnail02,
+  RenanThumbnail03,
+  RenanThumbnail04,
 
   // No Image
   NoImage
