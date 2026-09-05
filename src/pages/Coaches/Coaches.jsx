@@ -26,6 +26,7 @@ const coaches = [
 		experience: 'Mais de 10 anos',
 		achievements: 'Campeã e instrutora de Muay Thai',
 		image: AndressaPfp,
+		hidden: true, // temporarily removed, keep data in case she returns
 	},
 	{
 		id: 'pedro-paiva',
@@ -50,6 +51,7 @@ const coaches = [
 		experience: 'Mais de 10 anos',
 		achievements: 'Lutador profissional com múltiplos campeonatos',
 		image: RafaelPfp,
+		hidden: true, // temporarily removed, keep data in case he returns
 	},
 	{
 		id: 'fernando-teixeira',
@@ -107,7 +109,7 @@ const Coaches = () => {
 						scrollVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
 					}`}
 				>
-					{coaches.map((coach, index) => (
+					{coaches.filter((coach) => !coach.hidden).map((coach, index) => (
 						<div
 							key={index}
 							className={`bg-nfk-gray border border-gray-700 hover:border-nfk-red transition-all duration-300 group cursor-pointer ${
