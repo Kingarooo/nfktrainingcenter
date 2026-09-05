@@ -16,7 +16,7 @@ import JiujitsuThumbnail from '../../assets/sport/jiujitsu/jiujitsu_thumbnail_01
 import KarateThumbnail from '../../assets/sport/karate/karate_thumbnail_01.jpg';
 
 const sportImages = {
-  boxe: [BoxeThumbnail],
+  'geral e funcional': [BoxeThumbnail],
   kickboxing: [KickboxingThumbnail01, KickboxingThumbnail02],
   muaythai: [
     MuaythaiThumbnail01, MuaythaiThumbnail02, MuaythaiThumbnail03, MuaythaiThumbnail04, MuaythaiThumbnail05,
@@ -28,11 +28,15 @@ const sportImages = {
 };
 
 const sportNames = {
-  boxe: 'BOXE',
+  'geral e funcional': 'GERAL E FUNCIONAL',
   kickboxing: 'KICKBOXING',
   muaythai: 'MUAY THAI',
   'jiu jitsu': 'JIU JITSU',
   karaté: 'KARATÉ'
+};
+
+const sportDescriptions = {
+  'geral e funcional': 'Aulas de treino funcional e condicionamento físico geral, pensadas para melhorar força, resistência e mobilidade através de exercícios dinâmicos e desafiantes, complementando a preparação física de qualquer atleta de combate.'
 };
 
 const SportPage = () => {
@@ -77,7 +81,11 @@ const SportPage = () => {
           <h1 className="font-bebas text-4xl md:text-6xl text-nfk-red">
             {sportNames[name] || name?.toUpperCase()}
           </h1>
-          <p className="text-2xl text-gray-400 mt-2">Galeria de fotos</p>
+          {sportDescriptions[name] ? (
+            <p className="text-gray-400 mt-2 max-w-3xl">{sportDescriptions[name]}</p>
+          ) : (
+            <p className="text-2xl text-gray-400 mt-2">Galeria de fotos</p>
+          )}
         </div>
       </div>
 

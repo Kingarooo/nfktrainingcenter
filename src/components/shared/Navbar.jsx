@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, Link } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, Link } from "@heroui/react";
 import logoNfk from '../../assets/Logo_NFK.jpg';
 import { useNavigate, useLocation } from 'react-router-dom';
 

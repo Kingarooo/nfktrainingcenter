@@ -3,7 +3,6 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import InfoIcon from './shared/InfoIcon';
 import {
   KickboxingThumbnail,
-  BoxeThumbnail,
   MuaythaiThumbnail,
   BjjThumbnail,
   KarateThumbnail
@@ -18,16 +17,7 @@ const sports = [
     submodalities: [
       'Kickboxing Adultos',
       'Kickboxing Kids',
-      'Kickboxing/Muaythai Kids',
-      'Bag Workout'
-    ]
-  },
-  {
-    name: 'BOXE',
-    image: BoxeThumbnail,
-    description: 'A arte nobre da luta com punhos.',
-    submodalities: [
-      'Boxe'
+      'Kickboxing/Muaythai Kids'
     ]
   },
   {

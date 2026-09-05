@@ -8,108 +8,50 @@ const commonSunday = [
 // Boxing / Boxe schedule
 const boxingSchedule = {
   Segunda: [
+    { time: "07:00 - 08:00", class: "Geral" },
     { time: "18:00", class: "Boxe" }
   ],
   Terça: [
-    { time: "18:00", class: "Boxe" }
+    { time: "18:00 - 19:00", class: "Funcional" },
+    { time: "19:00 - 20:30", class: "Geral" }
   ],
   Quarta: [
+    { time: "07:00 - 08:00", class: "Geral" },
     { time: "18:00", class: "Boxe" }
   ],
   Quinta: [
-    { time: "18:00", class: "Boxe" }
+    { time: "18:00 - 19:00", class: "Funcional" },
+    { time: "19:00 - 20:30", class: "Geral" }
   ],
   Sexta: [
-    { time: "18:00", class: "Boxe" }
+    { time: "07:00 - 08:00", class: "Geral" },
+    { time: "18:00", class: "Boxe" },
+    { time: "19:00 - 20:30", class: "Geral" }
   ],
   Sábado: [],
   Domingo: commonSunday
 };
 
-// Kickboxing schedule
-const kickboxingSchedule = {
+// Kickboxing & Muaythai schedule, organized by training level
+const kickboxingMuaythaiSchedule = {
   Segunda: [
-    { time: "07:00", class: "Kickboxing" },
-    { time: "19:00", class: "Kickboxing" }
-  ],
-  Terça: [
-    { time: "19:00", class: "Kickboxing" }
-  ],
-  Quarta: [
-    { time: "07:00", class: "Kickboxing" },
-    { time: "19:00", class: "Kickboxing" }
-  ],
-  Quinta: [
-    { time: "19:00", class: "Kickboxing" }
-  ],
-  Sexta: [
-    { time: "07:00", class: "Kickboxing" },
-    { time: "19:00", class: "Kickboxing" }
-  ],
-  Sábado: [
-    { time: "11:00", class: "Kickboxing" }
-  ],
-  Domingo: commonSunday
-};
-
-// Muay Thai schedule
-const muaythaiSchedule = {
-  Segunda: [
-    { time: "20:00", class: "Muay Thai" }
-  ],
-  Terça: [
-    { time: "20:00", class: "Muay Thai" }
-  ],
-  Quarta: [
-    { time: "20:00", class: "Muay Thai" }
-  ],
-  Quinta: [
-    { time: "20:00", class: "Muay Thai" }
-  ],
-  Sexta: [
-    { time: "20:00", class: "Muay Thai" }
-  ],
-  Sábado: [],
-  Domingo: commonSunday
-};
-
-// Merge Kickboxing then Muay Thai so Muay Thai classes always appear after Kickboxing
-// Shared Sunday entry (fixed for all schedules)
-
-const mergeSchedules = (primary = {}, secondary = {}) => {
-  const days = Array.from(new Set([...Object.keys(primary), ...Object.keys(secondary)]));
-  const merged = {};
-  days.forEach(day => {
-    const a = primary[day] || [];
-    const b = secondary[day] || [];
-    merged[day] = [...a, ...b];
-  });
-  // Enforce a single, shared Domingo entry to avoid duplicates
-  merged['Domingo'] = commonSunday;
-  return merged;
-};
-
-const kickboxingWithMuay = mergeSchedules(kickboxingSchedule, muaythaiSchedule);
-
-// Bag Workout schedule (to be coupled with Boxing)
-const bagSchedule = {
-  Segunda: [
-    { time: "10:30 - 11:15", class: "Bag Workout" }
+    { time: "18:00 - 19:00", class: "Iniciados" },
+    { time: "19:00 - 20:00", class: "Avançados / Competição" }
   ],
   Terça: [],
   Quarta: [
-    { time: "10:30 - 11:15", class: "Bag Workout" }
+    { time: "18:00 - 19:00", class: "Iniciados" },
+    { time: "19:00 - 20:00", class: "Avançados / Competição" }
   ],
   Quinta: [],
   Sexta: [
-    { time: "10:30 - 11:15", class: "Bag Workout" }
+    { time: "18:00 - 19:00", class: "Treino de Saco" }
   ],
-  Sábado: [],
+  Sábado: [
+    { time: "11:00 - 12:00", class: "Sparring" }
+  ],
   Domingo: commonSunday
 };
-
-// Merge Boxing with Bag Workout so Bag classes appear alongside Boxe
-const boxingWithBag = mergeSchedules(boxingSchedule, bagSchedule);
 
 // Jiu-Jitsu (adultos) schedule
 const bjjSchedule = {
@@ -154,13 +96,13 @@ const karateSchedule = {
 const scheduleOptions = [
   {
     key: "Kickboxing",
-    labels: ["Kickboxing", "Muay Thai"],
-    schedule: kickboxingWithMuay,
+    labels: ["Kickboxing", "Muaythai"],
+    schedule: kickboxingMuaythaiSchedule,
   },
   {
     key: "Boxing",
-    labels: ["Boxe", "Bag Workout"],
-    schedule: boxingWithBag,
+    labels: ["Geral", "Funcional"],
+    schedule: boxingSchedule,
   },
   {
     key: "Karaté",

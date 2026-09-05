@@ -16,18 +16,17 @@ const sports = [
     image: KickboxingThumbnail,
     description: 'Combinação perfeita de punhos e pernas.',
     submodalities: [
-      'Kickboxing Adultos',
-      'Kickboxing Kids',
-      'Kickboxing/Muaythai Kids',
-      'Bag Workout'
+      'Iniciados',
+      'Avançados'
     ]
   },
   {
-    name: 'BOXE',
+    name: 'GERAL E FUNCIONAL',
     image: BoxeThumbnail,
-    description: 'A arte nobre da luta com punhos.',
+    description: 'Treino de alta intensidade para condição física e resistência.',
     submodalities: [
-      'Boxe'
+      'Geral',
+      'Funcional'
     ]
   },
   {
@@ -35,8 +34,8 @@ const sports = [
     image: MuaythaiThumbnail,
     description: 'A arte das oito armas.',
     submodalities: [
-      'Muaythai Adultos',
-      'Muaythai Kids'
+      'Iniciados',
+      'Avançados'
     ]
   },
   {
